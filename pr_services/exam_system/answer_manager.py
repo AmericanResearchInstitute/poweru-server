@@ -1,9 +1,5 @@
 """
 Answer Manager class.
-
-:author: Chris Church <cchurch@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
-I have all the answers.  I am the magic 8 ball.
 """
 
 __docformat__ = "restructuredtext en"

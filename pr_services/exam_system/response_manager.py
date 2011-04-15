@@ -1,9 +1,5 @@
 """
 Response Manager class.
-
-:author: Chris Church <cchurch@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
-Please mark your responses clearly using only a #2 pencil.
 """
 
 __docformat__ = "restructuredtext en"

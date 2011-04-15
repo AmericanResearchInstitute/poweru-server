@@ -1,9 +1,5 @@
 """
 Question Pool Manager class.
-
-:author: Chris Church <cchurch@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
-Where questions go swimming.  Don't pee in the pool.
 """
 
 __docformat__ = "restructuredtext en"

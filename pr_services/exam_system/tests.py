@@ -1,9 +1,5 @@
 """
 Non-RPC unit tests for Power Reg exam system.
-
-:author: Chris Church <cchurch@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
-Even our exams have to take tests.
 """
 
 __docformat__ = "restructuredtext en"

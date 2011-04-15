@@ -1,8 +1,5 @@
 """
 TaskBundleManager class
-
-:copyright: Copyright 2010 American Research Institute, Inc.
-How many licks does it take to get to the center?  The world may never know.
 """
 __docformat__ = "restructuredtext en"
 

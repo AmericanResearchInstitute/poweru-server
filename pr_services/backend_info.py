@@ -1,8 +1,5 @@
 """
 Backend Info service class.
-
-@author Chris Church <cchurch@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 import datetime

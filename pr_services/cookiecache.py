@@ -1,8 +1,6 @@
 """
 Manage authorization data that is stored in memcache,
 as well as in the database.
-
-@copyright 2009 American Research Institute, Inc.
 """
 
 from django.conf import settings

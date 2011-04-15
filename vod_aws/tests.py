@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Unit Tests for the vod_aws plugin
-
-@copyright Copyright 2010 American Research Institute, Inc.
-
+"""
+Unit Tests for the vod_aws plugin
 """
 from __future__ import with_statement
 

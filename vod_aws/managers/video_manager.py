@@ -1,7 +1,5 @@
 """
 VideoManager class
-
-:copyright: Copyright 2009 American Research Institute, Inc.
 """
 
 __docformat__ = "restructuredtext en"

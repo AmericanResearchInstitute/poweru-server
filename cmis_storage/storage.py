@@ -1,8 +1,3 @@
-"""
-@author Sean Myers <smyers@americanri.com>
-@copyright Copyright 2008 American Research Institute, Inc.
-"""
-
 import os
 import uuid
 import urlparse

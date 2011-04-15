@@ -1,8 +1,5 @@
 """
 FormPage Manager class.
-
-:author: Michael Hrivnak <mhrivnak@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
 """
 
 __docformat__ = "restructuredtext en"

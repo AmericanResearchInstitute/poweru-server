@@ -1,8 +1,5 @@
 """
 EncodedVideoManager class
-
-@copyright Copyright 2009 American Research Institute, Inc.
-I am serious, and don't call me Shirley.
 """
 
 from django.conf import settings

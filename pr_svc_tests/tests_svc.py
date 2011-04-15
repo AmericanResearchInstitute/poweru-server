@@ -11,10 +11,6 @@
 #
 # To run it in "local" mode, include the pr_svc_tests app in INSTALLED_APPS and
 # run the normal unit tests.
-#
-# Author: Chris Church <cchurch@americanri.com>
-# Author: Randy Barlow <rbarlow@americanri.com>
-# Copyright 2011 American Research Institute, Inc.
 
 from __future__ import with_statement
 

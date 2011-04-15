@@ -1,7 +1,5 @@
 """
 VideoCategoryManager class
-
-:copyright: Copyright 2011 American Research Institute, Inc.
 """
 
 __docformat__ = "restructuredtext en"

@@ -1,8 +1,5 @@
 """
 TaskFee manager class
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2010 American Research Institute, Inc.
 """
 
 from pr_services.rpc.service import service_method

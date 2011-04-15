@@ -1,8 +1,5 @@
 """
 AssignmentManager class
-
-@copyright Copyright 2009 American Research Institute, Inc.
-Why do I dream of you?
 """
 
 import datetime

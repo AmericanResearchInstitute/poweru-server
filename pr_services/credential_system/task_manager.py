@@ -1,8 +1,5 @@
 """
 TaskManager class
-
-:copyright: Copyright 2009 American Research Institute, Inc.
-I'd rather call this the task master.  The cruel, cruel task master.
 """
 __docformat__ = "restructuredtext en"
 

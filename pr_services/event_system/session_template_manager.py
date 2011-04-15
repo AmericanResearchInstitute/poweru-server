@@ -1,7 +1,5 @@
 """
 SessionTemplate manager class
-
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from pr_services.object_manager import ObjectManager

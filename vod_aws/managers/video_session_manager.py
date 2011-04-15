@@ -1,7 +1,5 @@
 """
 VideoSessionManager class
-
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from datetime import datetime, timedelta

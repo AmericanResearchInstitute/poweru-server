@@ -1,7 +1,5 @@
 """
 AssignmentAttemptManager class
-
-@copyright Copyright 2010 American Research Institute, Inc.
 """
 
 from pr_services.object_manager import ObjectManager

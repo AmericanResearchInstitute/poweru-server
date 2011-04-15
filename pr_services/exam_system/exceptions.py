@@ -1,7 +1,5 @@
 """
 Exceptions for Power Reg exam system.
-
-:copyright: Copyright 2010 American Research Institute, Inc.
 """
 
 __docformat__ = "restructuredtext en"

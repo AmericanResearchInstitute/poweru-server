@@ -1,9 +1,5 @@
 """
 Question Manager class.
-
-:author: Chris Church <cchurch@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
-Natural Chunky Peanut Butter.  Now with extra chunks.
 """
 
 __docformat__ = "restructuredtext en"

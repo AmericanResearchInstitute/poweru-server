@@ -1,7 +1,5 @@
 """
 ScoSessionManager class
-
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from pr_services.credential_system.assignment_attempt_manager import AssignmentAttemptManager

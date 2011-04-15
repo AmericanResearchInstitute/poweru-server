@@ -3,9 +3,6 @@ This module contains the authorizer class, which is able
 to answer the question of whether or not a particular
 user has access to a particular attribute on a particular
 model.
-
-@author Randy Barlow <rbarlow@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from __future__ import with_statement

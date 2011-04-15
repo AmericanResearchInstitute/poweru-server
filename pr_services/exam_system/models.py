@@ -1,8 +1,5 @@
 """
 Data model for Power Reg exam system.
-
-:author: Chris Church <cchurch@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
 """
 
 __docformat__ = "restructuredtext en"

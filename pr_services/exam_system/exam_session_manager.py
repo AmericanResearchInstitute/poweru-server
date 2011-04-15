@@ -1,9 +1,5 @@
 """
 Exam Session Manager class.
-
-:author: Chris Church <church@americanri.com>
-:author: Michael Hrivnak <mhrivnak@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
 """
 
 __docformat__ = "restructuredtext en"

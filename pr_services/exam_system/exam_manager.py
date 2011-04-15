@@ -1,9 +1,5 @@
 """
 Exam Manager class.
-
-:author: Chris Church <cchurch@americanri.com>
-:author: Michael Hrivnak <mhrinak@americanri.com>
-:copyright: Copyright 2010 American Research Institute, Inc.
 """
 
 __docformat__ = "restructuredtext en"
