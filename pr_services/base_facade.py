@@ -40,6 +40,7 @@ managers.add_import('CurriculumEnrollmentManager', 'pr_services.credential_syste
 managers.add_import('CurriculumManager', 'pr_services.credential_system.curriculum_manager')
 managers.add_import('CurriculumTaskAssociationManager', 'pr_services.credential_system.curriculum_task_association_manager')
 managers.add_import('CustomActionManager', 'pr_services.custom_action_manager')
+managers.add_import('DBSettingManager', 'pr_services.dbsettings')
 managers.add_import('DomainAffiliationManager', 'pr_services.user_system.domain_affiliation_manager')
 managers.add_import('DomainManager', 'pr_services.user_system.domain_manager')
 managers.add_import('EventManager', 'pr_services.event_system.event_manager')

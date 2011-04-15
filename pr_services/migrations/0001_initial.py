@@ -1524,6 +1524,14 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal('pr_services', ['CustomAction'])
 
+        # Adding model 'DBSetting'
+        db.create_table('pr_services_dbsetting', (
+            ('pickled_value', self.gf('django.db.models.fields.TextField')()),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=127, unique=True)),
+        ))
+        db.send_create_signal('pr_services', ['DBSetting'])
+
         # Adding model 'Exam'
         db.create_table('pr_services_exam', (
             ('task_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['pr_services.Task'], unique=True, primary_key=True)),
@@ -2067,6 +2075,9 @@ class Migration(SchemaMigration):
         # Deleting model 'CustomAction'
         db.delete_table('pr_services_customaction')
 
+        # Deleting model 'DBSetting'
+        db.delete_table('pr_services_dbsetting')
+
         # Deleting model 'Exam'
         db.delete_table('pr_services_exam')
 
@@ -2429,6 +2440,12 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '65'}),
             'save_timestamp': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'})
+        },
+        'pr_services.dbsetting': {
+            'Meta': {'object_name': 'DBSetting'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '127', 'unique': 'True'}),
+            'pickled_value': ('django.db.models.fields.TextField', [], {})
         },
         'pr_services.domain': {
             'Meta': {'object_name': 'Domain'},

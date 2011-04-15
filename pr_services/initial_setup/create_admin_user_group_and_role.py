@@ -29,6 +29,7 @@ def setup(machine):
         {'name' : 'refund_does_not_exceed_payment', 'params' : {}},
     ]
     arb_perm_list = [
+        'access_db_settings',
         'check_usernames',
         'change_password_of_other_users',
         'exceed_enrollment_capacity',

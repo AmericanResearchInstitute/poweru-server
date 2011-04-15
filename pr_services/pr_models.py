@@ -3061,4 +3061,9 @@ class CustomAction(PRModel):
     function_name = models.CharField(max_length=127)
     blame = PRForeignKey(Blame, related_name='custom_actions')
 
+
+class DBSetting(models.Model):
+    name = models.CharField(max_length=127, unique=True)
+    pickled_value = models.TextField()
+
 # vim:tabstop=4 shiftwidth=4 expandtab
