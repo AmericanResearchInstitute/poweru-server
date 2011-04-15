@@ -1,9 +1,5 @@
 """
 Resource manager class
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
-Joan of Arc will shield your cube.
 """
 
 from pr_services.object_manager import ObjectManager

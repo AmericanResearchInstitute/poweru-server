@@ -1,7 +1,5 @@
 """
 Region manager class
-
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from pr_services import exceptions

@@ -1,8 +1,5 @@
 """
 ecommerce exceptions
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2008 American Research Institute, Inc.
 """
 
 from pr_services.exceptions import PrException

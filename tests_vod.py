@@ -4,7 +4,6 @@
 #
 # A test suite for the VOD service. To use it, you need to have a fully
 # configured back-end running, pointed to by tests_svc_settings.py
-# Copyright 2010 The American Research Institute, Inc.
 
 from __future__ import with_statement
 

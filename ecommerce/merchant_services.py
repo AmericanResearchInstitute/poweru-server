@@ -1,8 +1,5 @@
 """
 Merchant Services framework
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2008 American Research Institute, Inc.
 """
 
 from exceptions import invalid_input_exception, must_use_txn_data_exception

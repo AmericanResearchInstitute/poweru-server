@@ -1,7 +1,4 @@
 # Unit tests for the ecommerce application
-#
-# Author: Michael Hrivnak <mhrivnak@americanri.com>
-# Copyright 2008 American Research Institute, Inc.
 
 import django.test
 from datetime import datetime, timedelta

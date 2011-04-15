@@ -1,8 +1,6 @@
 from __future__ import with_statement
 """
 User manager class
-
-:copyright: Copyright 2009 American Research Institute, Inc.
 """
 __docformat__ = "restructuredtext en"
 

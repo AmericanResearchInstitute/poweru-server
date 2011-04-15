@@ -1,8 +1,3 @@
-"""
-@author Sean Myers <smyers@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
-Listen to the wood and string.
-"""
 from __future__ import with_statement
 
 from django.conf import settings

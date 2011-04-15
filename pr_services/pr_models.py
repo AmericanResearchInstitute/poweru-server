@@ -1,12 +1,3 @@
-"""
-data model for Power Reg 2
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@author Andrew D. Ball <aball@americanri.com>
-@author Randy Barlow <rbarlow@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
-"""
-
 from datetime import date, datetime, timedelta
 from decimal import Decimal
 import itertools

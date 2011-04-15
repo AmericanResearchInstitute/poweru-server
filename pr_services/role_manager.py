@@ -1,8 +1,5 @@
 """
 Role manager class
-
-@author Randy Barlow <rbarlow@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from object_manager import ObjectManager

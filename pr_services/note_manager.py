@@ -1,9 +1,5 @@
 """
 Note manager class
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
-I'll disconnect the telephone.
 """
 
 from object_manager import ObjectManager

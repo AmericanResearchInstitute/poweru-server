@@ -1,8 +1,5 @@
 """
 Room manager class
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from pr_services import exceptions

@@ -1,8 +1,5 @@
 """
 This modules deals with time and date conversion
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 import datetime

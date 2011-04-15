@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-@copyright Copyright 2009 American Research Institute, Inc.
-"""
 
 import codecs
 import csv

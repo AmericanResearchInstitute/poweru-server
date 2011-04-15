@@ -1,8 +1,4 @@
 ## amf_svc.py
-#
-# Author(s): Michael Hrivnak <mhrivnak@americanri.com>
-#            Sean Myers <smyers@americanri.com>
-# Copyright 2008 American Research Institute, Inc.
 
 from pr_services import exceptions
 from pr_services.rpc.service import ServiceManagers

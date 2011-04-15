@@ -1,8 +1,5 @@
 """
 Virtual Merchant module for use with ecommerce.merchant_services
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2008 American Research Institute, Inc.
 """
 
 from xml.dom.minidom import Document, parseString

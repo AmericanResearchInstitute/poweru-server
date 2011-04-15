@@ -1,7 +1,5 @@
 """
-Getters and setters for use in the pr2_object_manager
-
-:copyright: Copyright 2009 American Research Institute, Inc.
+Getters and setters for use in the object_manager
 """
 __docformat__ = "restructuredtext en"
 

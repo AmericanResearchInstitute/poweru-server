@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 non-RPC unit tests for Power Reg
-
-@author Andrew Ball <aball@americanri.com>
-@author Chris Church <cchurch@americanri.com>
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@author Randy Barlow <rbarlow@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 from __future__ import with_statement

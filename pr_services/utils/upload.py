@@ -1,7 +1,5 @@
-"""Utils to help facilitate uploads.
-
-:copyright: Copyright 2010 American Research Institute, Inc.
-
+"""
+Utils to help facilitate uploads.
 """
 
 __docformat__ = "restructuredtext en"

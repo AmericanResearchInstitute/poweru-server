@@ -1,8 +1,5 @@
 """
 OrgEmailDomain manager class
-
-@author Chris Church <cchurch@americanri.com>
-@copyright Copyright 2011 American Research Institute, Inc.
 """
 
 from pr_services.object_manager import ObjectManager

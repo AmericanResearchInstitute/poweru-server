@@ -1,8 +1,4 @@
 ## xmlrpc_svc.py
-#
-# Author(s): Michael Hrivnak <mhrivnak@americanri.com>
-#            Sean Myers <smyers@americanri.com>
-# Copyright 2008 American Research Institute, Inc.
 
 from SimpleXMLRPCServer import SimpleXMLRPCDispatcher
 from django.http import HttpResponse

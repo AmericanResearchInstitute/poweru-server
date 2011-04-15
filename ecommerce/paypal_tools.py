@@ -1,8 +1,5 @@
 """
 Paypal module for use with ecommerce.merchant_services
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2008 American Research Institute, Inc.
 """
 
 import cgi

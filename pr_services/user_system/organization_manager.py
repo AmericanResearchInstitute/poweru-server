@@ -1,8 +1,5 @@
 """
 Organization manager class
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 import facade

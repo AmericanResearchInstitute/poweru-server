@@ -1,8 +1,5 @@
 """
 CourseManager class
-
-@copyright Copyright 2009 American Research Institute, Inc.
-I done made up my mind.
 """
 
 from pr_services import exceptions

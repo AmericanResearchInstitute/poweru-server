@@ -1,10 +1,5 @@
 """
 Class used as a shim for functions invoked via RPC
-
-@author Chris Church <cchurch@americanri.com>
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
-The wind almost took me away.
 """
 
 # Python

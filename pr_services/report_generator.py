@@ -1,6 +1,5 @@
 """
 @author Randy Barlow <rbarlow@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
 """
 
 import base64

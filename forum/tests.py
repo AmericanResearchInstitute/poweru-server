@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 non-RPC unit tests for Forums
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2010 American Research Institute, Inc.
 """
 
 from pr_services.initial_setup import InitialSetupMachine

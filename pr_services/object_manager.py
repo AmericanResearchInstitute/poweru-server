@@ -1,11 +1,5 @@
 """
 abstract base class for classes that manage persistent objects in the Power Reg 2 system
-
-:author: Michael Hrivnak <mhrivnak@americanri.com>
-:author: Andrew D. Ball <aball@americanri.com>
-:author: Randy Barlow <rbarlow@americanri.com>
-
-:copyright: Copyright 2009 American Research Institute, Inc.
 """
 __docformat__ = "restructuredtext en"
 

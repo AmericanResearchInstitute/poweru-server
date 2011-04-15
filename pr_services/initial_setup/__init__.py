@@ -1,10 +1,5 @@
 """
 initial setup for the power reg 2 application
-
-@copyright Copyright 2011 American Research Institute, Inc.
-
-@author Andrew D. Ball <aball@americanri.com>
-@author Alexey Toptygin <alexeyt@americanri.com>
 """
 
 import cPickle

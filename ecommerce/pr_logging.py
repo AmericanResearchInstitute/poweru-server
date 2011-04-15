@@ -1,8 +1,5 @@
 """
 Logging for the e-commerce Django app.
-
-@author Michael Hrivnak <mhrivnak@americanri.com>
-@copyright Copyright 2008 American Research Institute, Inc.
 """
 
 from e_settings import *

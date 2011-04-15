@@ -1,7 +1,3 @@
-"""
-@copyright Copyright 2009 American Research Institute, Inc.
-"""
-
 import logging
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest

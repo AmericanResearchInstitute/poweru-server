@@ -1,8 +1,3 @@
-"""
-@author Chris Church <cchurch@americanri.com>
-@copyright Copyright 2009 American Research Institute, Inc.
-"""
-
 # Based on: http://code.djangoproject.com/wiki/CookBookThreadlocalsAndUser
 
 try:
