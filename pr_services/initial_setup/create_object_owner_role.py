@@ -1,4 +1,5 @@
 from decorators import authz
+from django.conf import settings
 
 @authz
 def setup(machine):
@@ -13,9 +14,10 @@ def setup(machine):
         {'name' : 'actor_owns_question_response', 'params' : {}},
         {'name' : 'assignment_attempt_meets_date_restrictions', 'params' : {}},
         {'name' : 'assignment_attempt_prerequisites_met', 'params' : {}},
-        {'name' : 'assignment_is_not_video', 'params' : {}},
         {'name' : 'populated_exam_session_is_finished', 'params' : {}},
     ]
+    if 'vod_aws' in settings.INSTALLED_APPS:
+        methods.append({'name' : 'assignment_is_not_video', 'params' : {}})
     crud = {
         'Assignment' : {
             'c' : True,
