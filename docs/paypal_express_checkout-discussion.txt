@@ -1,0 +1,98 @@
+From mhrivnak at americanri.com  Thu Nov 20 19:41:54 2008
+From: mhrivnak at americanri.com (Michael Hrivnak)
+Date: Thu, 20 Nov 2008 19:41:54 -0500
+Subject: [Powerregdev]
+	=?iso-8859-1?q?Can_we_decouple_powerreg_and_ecommer?=
+	=?iso-8859-1?q?ce_in_a=09painless_way=3F?=
+In-Reply-To: <4925FA21.1070503@americanri.com>
+References: <4925DE5B.3050104@americanri.com>
+	<200811201851.48714.mhrivnak@americanri.com>
+	<4925FA21.1070503@americanri.com>
+Message-ID: <200811201941.58346.mhrivnak@americanri.com>
+
+Certainly!
+
+1. When a client app wants to use express checkout, it tells ecommerce as much 
+and gives it the amount.
+
+2. The ecommerce app gets a unique URL from paypal that ties the transaction 
+to our account, along with a unique token that identifies the transaction.  
+It stores the token, amount, and current time in its database, and then hands 
+the URL and token to the client app.
+
+3. The client app stores the token along with other transaction details for 
+later use.
+
+4. The user takes the URL and travels to the Paypal website to maybe agree to 
+make the payment.  If they cancel, they are redirected to a "sorry you 
+canceled" page that we host.  If they agree the payment, they are redirected 
+to a receipt page that we host.
+
+5. When the user's browser loads the receipt page (hosted by the ecommerce 
+app), that triggers the ecommerce app to contact paypal and retrieve the 
+details to which the user agreed.  The payment isn't actually completed until 
+this point.  The ecommerce app digs up the token it saved in step 2 to verify 
+the amount, and then completes the transaction with paypal.  The data is fed 
+into the receipt template.
+
+6. At this point, the ecommerce app must tell the client app about the new 
+payment.  As it stands now, it just calls 
+pr_services.payment_manager._complete_express_checkout(token, amount, 
+transaction_id).
+
+7. The client app digs up the token object it stored in step 3 (which in the 
+case of pr_services contains user information, credit card information, etc.) 
+and records the new payment.
+
+The big question is in step 6.  We could:
+
+A. require client apps to have their own RPC listener for the ecommerce app to 
+call.
+
+B. Shove data back and forth through named pipes, although this would require 
+a new listening daemon and maybe a custom RPC protocol.  Or maybe we could 
+use XML-RPC over a named pipe.
+
+C. Have the client app poll the ecommerce app.  I don't like this option, and 
+you probably won't either.
+
+D. Require client apps to provide a python method in a file that can be 
+imported.  This is sort of what we do now, but we could standardize the 
+method parameters and the way in which the method is specified in a settings 
+file.  Of course, this forces clients to use python.
+
+I'm leaning toward A.  I am hopeful that most platforms could easily provide a 
+SOAP listener with one simple method.  This gives us the freedom to put the 
+ecommerce app on a different VM from the client app, but gived the client app 
+more responsibility.
+
+My overriding concern is making this easy for developers to use on lots of 
+platforms.  It should be significantly faster and easier to use the ecommerce 
+app than it would be to re-implement its functionality in your local app.
+
+While we're at it, if we separate the ecommerce app in a significant way, it 
+will need the ability to queue payment notifications when it fails to contact 
+the client app.  That should be hard to implement.
+
+Michael
+
+On Thursday 20 November 2008 19:00:33 Sean Myers wrote:
+> Michael Hrivnak wrote:
+> > The biggest problem right now is that Paypal's Express Checkout feature
+> > requires the ecommerce app to notify the client app (such as pr_services)
+> > when a transaction is complete.  We don't know how long the transaction
+> > will take, so ecommerce must be able to initiate communication.
+> >
+> > If we can crack that nut, the rest will be simple.  Suggestions?
+>
+> Maybe, but I'm not clear on the terminology. Can you provide more details,
+> like a quick walkthrough of what express_checkout is, and how it works?
+> Also, if you've got an idea of how you'd like it to work in a perfect
+> world, that might help me out.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: This is a digitally signed message part.
+Url : http://cliff.americanri.com.ofc/pipermail/powerregdev/attachments/20081120/725566b9/attachment.pgp 

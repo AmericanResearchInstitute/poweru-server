@@ -1,0 +1,80 @@
+[{
+    "pk": 8,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:52:18",
+        "final_type": ["vod_aws", "category"],
+        "name": "Administration",
+        "create_timestamp": "2010-11-29 19:52:18"
+    }
+},
+{
+    "pk": 4,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:51:29",
+        "final_type": ["vod_aws", "category"],
+        "name": "Continuing Education",
+        "create_timestamp": "2010-11-29 19:51:29"
+    }
+},
+{
+    "pk": 5,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:51:57",
+        "final_type": ["vod_aws", "category"],
+        "name": "Marketing",
+        "create_timestamp": "2010-11-29 19:51:57"
+    }
+},
+{
+    "pk": 2,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:44:44",
+        "final_type": ["vod_aws", "category"],
+        "name": "Operations",
+        "create_timestamp": "2010-11-29 19:44:44"
+    }
+},
+{
+    "pk": 6,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:52:02",
+        "final_type": ["vod_aws", "category"],
+        "name": "Safety",
+        "create_timestamp": "2010-11-29 19:52:02"
+    }
+},
+{
+    "pk": 3,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:44:49",
+        "final_type": ["vod_aws", "category"],
+        "name": "Sales",
+        "create_timestamp": "2010-11-29 19:44:49"
+    }
+},
+{
+    "pk": 7,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:52:05",
+        "final_type": ["vod_aws", "category"],
+        "name": "Support",
+        "create_timestamp": "2010-11-29 19:52:05"
+    }
+},
+{
+    "pk": 1,
+    "model": "vod_aws.category",
+    "fields": {
+        "save_timestamp": "2010-11-29 19:44:26",
+        "final_type": ["vod_aws", "category"],
+        "name": "Training",
+        "create_timestamp": "2010-11-29 19:44:26"
+    }
+}]

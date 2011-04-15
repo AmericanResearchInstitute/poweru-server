@@ -1,0 +1,33 @@
+## Settings required to connect to Paypal's gateway.
+class settings(object):
+    __slots__ = [] # This makes all attributes read-only
+
+    # The production URL for signature use is https://api-3t.paypal.com/nvp
+    # The testing URL for signature use is https://api-3t.sandbox.paypal.com/nvp
+    # The production URL for certificate use is https://api.paypal.com/nvp
+    # The testing URL for certificate use is https://api.sandbox.paypal.com/nvp
+    url = 'https://api-3t.sandbox.paypal.com/nvp'
+    user_id = 'mhrivn_1218400643_biz_api1.americanri.com'
+    password = '1218400648'
+
+    # To obtain this, log in to your paypal account, go to "API Access", then "Request API Credentials"
+    # This may not be defined if you also define cert_file and key_file, because Paypal forces you to choose one
+    # method for authentication.
+    signature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31Aqh9JsSIGhyDPv1hz3KM8Y8dwB8b'
+
+    # To obtain this, log in to your paypal account, go to "API Access", then "Request API Credentials"
+    # Note that in this scenario, you get a different user_id and password provided on paypal's certificate
+    # viewing page.
+    # Enter absolute paths
+    # If you define 'key_file' and 'cert_file', you cannot define 'signature', because Paypal
+    # forces you to choose one method for authentication.
+    key_file = '/home/nfs/mhrivnak/svn/python/trunk/power_reg/ecommerce/paypal_key.txt'
+    cert_file = '/home/nfs/mhrivnak/svn/python/trunk/power_reg/ecommerce/paypal_cert.txt'
+
+    # The production URL is https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout
+    # The testing URL is https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout
+    express_checkout_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout'
+    return_url = 'http://rusty:23456/express_checkout/success/'
+    cancel_url = 'http://rusty:23456/express_checkout/cancel/'
+
+# vim:tabstop=4 shiftwidth=4 expandtab

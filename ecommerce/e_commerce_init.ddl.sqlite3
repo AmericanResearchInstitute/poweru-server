@@ -1,0 +1,5 @@
+CREATE TABLE "raw_response" (
+  "id" integer NOT NULL PRIMARY KEY,
+  "text" text NOT NULL,
+  "time" datetime NOT NULL
+);

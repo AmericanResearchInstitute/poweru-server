@@ -1,0 +1,12 @@
+{% extends "base_site.html" %}
+
+{% block title %}User Photo Upload{% endblock %} 
+
+{% block content %}
+
+<form enctype="multipart/form-data" action="{% url upload_user_photo_form auth_token user_id %}" method="POST">
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

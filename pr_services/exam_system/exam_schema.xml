@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<element xmlns="http://relaxng.org/ns/structure/1.0" name="exam"
+	ns="http://americanri.com/2009/poweru/exam/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<attribute name="id">
+		<data type="ID">
+			<param name="maxLength">255</param>
+		</data>
+	</attribute>
+	<zeroOrMore>
+		<element name="question_pool">
+			<zeroOrMore>
+				<element name="question">
+					<attribute name="type">
+						<choice>
+							<value>bool</value>
+							<value>char</value>
+							<value>choice</value>
+							<value>date</value>
+							<value>datetime</value>
+							<value>decimal</value>
+							<value>float</value>
+							<value>int</value>
+							<value>rating</value>
+							<value>text</value>
+							<value>time</value>
+						</choice>
+					</attribute>
+					<interleave>
+						<zeroOrMore>
+							<element name="answer">
+								<optional>
+									<attribute name="id">
+										<data type="ID" />
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="pk">
+										<data type="nonNegativeInteger" />
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="correct">
+										<data type="boolean" />
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="end_exam">
+										<data type="boolean" />
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="end_question_pool">
+										<data type="boolean" />
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="text_response">
+										<data type="boolean" />
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="value">
+										<data type="string" />
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="next_question_pool">
+										<data type="IDREF" />
+									</attribute>
+								</optional>
+								<optional>
+									<element name="label">
+										<text />
+									</element>
+								</optional>
+							</element>
+						</zeroOrMore>
+						<optional>
+							<element name="label">
+								<text />
+							</element>
+						</optional>
+						<optional>
+							<element name="text_response_label">
+								<text />
+							</element>
+						</optional>
+						<optional>
+							<element name="help_text">
+								<text />
+							</element>
+						</optional>
+						<optional>
+							<element name="rejoinder">
+								<text />
+							</element>
+						</optional>
+					</interleave>
+					<optional>
+						<attribute name="id">
+							<data type="ID">
+								<param name="maxLength">255</param>
+							</data>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="pk">
+							<data type="nonNegativeInteger" />
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="widget">
+							<choice>
+								<value>CheckboxInput</value>
+								<value>CheckboxSelectMultiple</value>
+								<value>DateInput</value>
+								<value>DateTimeInput</value>
+								<value>RadioSelect</value>
+								<value>Select</value>
+								<value>SelectMultiple</value>
+								<value>TextInput</value>
+								<value>Textarea</value>
+								<value>TimeInput</value>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="min_length">
+							<data type="positiveInteger" />
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="max_length">
+							<data type="positiveInteger" />
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="min_answers">
+							<data type="nonNegativeInteger" />
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="max_answers">
+							<data type="string">
+								<param name="pattern">([1-9][0-9]*)|(none)</param>
+							</data>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="text_response">
+							<data type="boolean" />
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="min_value">
+							<data type="decimal">
+								<param name="totalDigits">24</param>
+								<param name="fractionDigits">10</param>
+							</data>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="max_value">
+							<data type="decimal">
+								<param name="totalDigits">24</param>
+								<param name="fractionDigits">10</param>
+							</data>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="required">
+							<data type="boolean" />
+						</attribute>
+					</optional>
+				</element>
+			</zeroOrMore>
+			<optional>
+				<attribute name="id">
+					<data type="ID">
+						<param name="maxLength">255</param>
+					</data>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="title">
+					<data type="string">
+						<param name="maxLength">255</param>
+					</data>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="next_question_pool">
+					<data type="IDREF" />
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="randomize_questions">
+					<data type="boolean" />
+				</attribute>
+			</optional>
+		</element>
+	</zeroOrMore>
+	<optional>
+		<attribute name="title">
+			<data type="string">
+				<param name="maxLength">191</param>
+			</data>
+		</attribute>
+	</optional>
+	<optional>
+		<attribute name="passing_score">
+			<data type="nonNegativeInteger">
+				<param name="maxInclusive">100</param>
+			</data>
+		</attribute>
+	</optional>
+	<optional>
+		<attribute name="version_id">
+			<data type="nonNegativeInteger"/>
+		</attribute>	
+	</optional>
+	<optional>
+		<attribute name="version_label">
+			<data type="string">
+				<param name="maxLength">255</param>
+			</data>
+		</attribute>
+	</optional>
+	<optional>
+		<attribute name="version_comment">
+			<data type="string">
+				<param name="maxLength">255</param>
+			</data>
+		</attribute>
+	</optional>
+</element>

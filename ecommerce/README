@@ -1,0 +1,15 @@
+History:
+
+- The 'payflowpro' module had support for Express Checkout in r3424, which was
+then removed.  However, it is buggy, and it was never able to be tested.  But,
+if a future customer wants this feature, it may be easier to start here.  A
+known issue as of this time is that the 'Transaction' XML structure is missing.
+
+Tips for writing merchant services modules:
+
+- Instantiate a pr_logging.raw_response object right before
+executing a transaction.  That way if there is a database
+error, an exception will be raised, thus preventing the
+transaction.  Call it's enter() method right after receiving
+a response.  If a database error occurs here, it will be
+handled silently, allowing processing to continue.

@@ -1,0 +1,11 @@
+# Settings for tests_svc.py
+
+# Which service to test against, 'amf', 'soap', or 'xmlrpc'
+SVC_TEST = 'amf'
+# Define the port and URL at which we wish to run our test server
+SVC_TEST_HOST = 'localhost'
+SVC_TEST_PORT = 12345
+SVC_TEST_PATH = ''
+SVC_TEST_URL = 'http://%s:%d/%s%s/' % (SVC_TEST_HOST,  SVC_TEST_PORT, SVC_TEST_PATH, SVC_TEST )
+
+# vim:tabstop=4 shiftwidth=4 expandtab

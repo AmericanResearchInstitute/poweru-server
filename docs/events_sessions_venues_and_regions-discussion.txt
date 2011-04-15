@@ -1,0 +1,514 @@
+From powerregdev-bounces@americanri.com Wed Dec 10 18:07:47 2008
+Return-Path: <powerregdev-bounces@americanri.com>
+Received: from cliff.americanri.com ([unix socket])
+	 by cliff (Cyrus v2.2.13-Debian-2.2.13-10) with LMTPA;
+	 Wed, 10 Dec 2008 18:07:47 -0500
+X-Sieve: CMU Sieve 2.2
+Received: from liberty.americanri.com (liberty.americanri.com.ofc [192.168.1.105])
+	by cliff.americanri.com (Postfix) with ESMTP id 61541A0002;
+	Wed, 10 Dec 2008 18:07:47 -0500 (EST)
+Received: from cliff.americanri.com.ofc (cliff.americanri.com.ofc [192.168.1.74])
+	by liberty.americanri.com (Postfix) with ESMTP id 084818FF58;
+	Wed, 10 Dec 2008 18:07:45 -0500 (EST)
+X-Original-To: powerregdev@cliff.americanri.com
+Delivered-To: powerregdev@cliff.americanri.com
+Received: from liberty.americanri.com (liberty.americanri.com.ofc
+	[192.168.1.105])
+	by cliff.americanri.com (Postfix) with ESMTP id A2B70A0002
+	for <powerregdev@cliff.americanri.com>;
+	Wed, 10 Dec 2008 18:07:45 -0500 (EST)
+Received: from ws36.americanri.com.ofc (ws36.americanri.com.ofc [10.10.20.36])
+	by liberty.americanri.com (Postfix) with ESMTP id 7C155D97EC
+	for <powerregdev@americanri.com>; Wed, 10 Dec 2008 18:07:43 -0500 (EST)
+Received: by ws36.americanri.com.ofc (Postfix, from userid 1000)
+	id 1DDC32220D7; Wed, 10 Dec 2008 18:07:50 -0500 (EST)
+Date: Wed, 10 Dec 2008 18:07:50 -0500
+From: "Andrew D. Ball" <aball@americanri.com>
+To: PowerReg Development <powerregdev@americanri.com>
+Message-ID: <20081210230750.GA17772@americanri.com>
+References: <E5B076BE80BD41F0A9D47B0CE66F0CE9@freedom.americanri.com>
+	<49404371.9030606@americanri.com>
+	<1DA919F6C4A246549E3351D299BCB55F@freedom.americanri.com>
+	<494046A5.1060003@americanri.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <494046A5.1060003@americanri.com>
+User-Agent: Mutt/1.5.17+20080114 (2008-01-14)
+X-Topics: General
+Subject: Re: [Powerregdev] Events, sessions, venues, regions
+X-BeenThere: powerregdev@americanri.com
+X-Mailman-Version: 2.1.9
+Precedence: list
+Reply-To: PowerReg Development <powerregdev@americanri.com>
+List-Id: PowerReg Development <powerregdev.americanri.com>
+List-Unsubscribe: <http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev>,
+	<mailto:powerregdev-request@americanri.com?subject=unsubscribe>
+List-Archive: <http://cliff.americanri.com.ofc/pipermail/powerregdev>
+List-Post: <mailto:powerregdev@americanri.com>
+List-Help: <mailto:powerregdev-request@americanri.com?subject=help>
+List-Subscribe: <http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev>,
+	<mailto:powerregdev-request@americanri.com?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: powerregdev-bounces@americanri.com
+Errors-To: powerregdev-bounces@americanri.com
+Status: RO
+Content-Length: 16019
+Lines: 455
+
+On Wed, Dec 10, 2008 at 05:45:57PM -0500, Ryan Leathers wrote:
+> Will explain in a cube drive-by
+> 
+
+The cube drive-by explanation was fine.  For our
+purposes, it makes sense to *always* specify
+a minimum and maximum capacity for a given
+course user role requirement.  For example,
+a course may have a lab component that needs
+at least 4 people or a course may be such
+that a typical instructor won't be able to
+attend to more than 50 students.  We're
+very unlikely to find a situation where some
+sort of capacity guidelines are not needed.
+
+This is currently enforced in the system, with
+non-negative values for minimum and maximum
+capacities.
+
+> 
+> 
+> Peter Miller wrote:
+> > The rules described below make sense, but I've wondered all along why
+> > capacities are associated with a conceptual item like a course at all.  A
+> > course is something like "Physics 101".  There is a name, subject, etc., and
+> > clearly there will be instructor(s) and students, but until the course is
+> > assigned to a location, why talk about capacity at all?  It is the same
+> > course, until you assign it to Guido University or MIT.
+> >
+> > -----Original Message-----
+> > From: powerregdev-bounces@americanri.com
+> > [mailto:powerregdev-bounces@americanri.com] On Behalf Of Ryan Leathers
+> > Sent: Wednesday, December 10, 2008 5:32 PM
+> > To: PowerReg Development
+> > Subject: Re: [Powerregdev] Events, sessions, venues, regions
+> >
+> > Clarification - please confirm:
+> >
+> > When a session of a given course is created, it should inherit the user
+> > role requirements from that course. The min and max capacities are
+> > initially created from the course template for each of the course's
+> > defined roles. Administrative override may alter these values on the
+> > session.
+> >
+> > At some point, a room must be assigned to a session. Since the room also
+> > has a capacity value, the system must ensure that the total number of
+> > users of all roles for the session is not greater than the room capacity
+> > value. The system should reduce the number of STUDENT users until the
+> > total number of users is not greater than the room capacity.  An
+
+No behavior of this sort is implemented in the backend at the
+moment.  Pete and I discussed briefly whether it's better to implement
+this sort of thing in the front-end or the back-end.
+
+> > administrator could administratively override room capacity and also
+> > increase cap limits for any user roles desired. This assumes that all
+
+The system doesn't currently have any administrative override
+facilities that I'm aware of.  As Ryan as I discussed, we
+should probably add a model to the database that logs each
+such action when we implement them.  The only actions that we
+have logged at the moment are creations of various objects that
+have associated blames.  We may wish to have a general
+action logging facility to include administrative overrides
+and other actions such as creation and deletion of objects.
+
+> > sessions will have a default user role of STUDENT. In any case, if the
+
+The default session user roles come from the initial setup script.
+In Power Reg core, they are currently 'Instructor' and 'Student'.
+We need to be careful what names we use in variants.  For
+example, AT&T has only a 'Participant' session user role, and
+Amway has 'Spanish' and 'English' session user roles.
+
+> > capcity requirement is not satisfied, an error should be thrown
+> > indicating the cap problem and the  session status should remain at
+> > pending until satisfied.
+
+We have no logic in the session manager about session status,
+but we should.  There are several methods of the
+form _to_<status>, but they are for session enrollments,
+not sessions.  They should eventually be moved or renamed
+to reflect their purpose to make room for similarly named
+methods that deal with *session* status changes.
+
+Session statuses can currently be set to any string value,
+because the 'status' attribute is mapped to the 'set_general'
+setter in the session manager's setter dictionary.  This
+will have to be replaced with a more controlled interface
+that makes use of some state transition methods in the
+future.
+
+> >
+> >
+> > Andrew D. Ball wrote:
+> >   
+> >> I'm going to correct this email and squirrel it
+> >> away in the python/trunk/docs/ directory in
+> >> Subversion, along with a graphical representation
+> >> of the relevent models and excerpts from the 
+> >> doc utilities that I wrote.  Here comes the
+> >> corrections:
+> >>
+> >> On Wed, Dec 10, 2008 at 12:35:48PM -0500, Ryan Leathers wrote:
+> >>   
+> >>     
+> >>> Andrew, Michael, Randy,
+> >>>
+> >>> If the following is inaccurate in any way, I need to know right away.
+> >>> If it is all correct, then Pete needs help seeing how to use it right
+> >>>       
+> > away.
+> >   
+> >>> The event object should have a region attribute.
+> >>> The event object should have a venue attribute.
+> >>> The venue object should have a region attribute.
+> >>>     
+> >>>       
+> >>   
+> >>     
+> >>> When an event is created, it must be assigned to an existing region.
+> >>> When the event is associated with a venue, the venue must belong to the
+> >>> assigned region.
+> >>>     
+> >>>       
+> >> Events can be created with or without both a region and a venue at
+> >> the moment.  In fact, regions given on event creation get
+> >> ignored.
+> >>
+> >> I've opened a ticket (#831) to use regions given for event
+> >> creation and to require at least a region for event creation,
+> >> with the option of providing a venue instead.  The user could
+> >> also provide both, as long as the region given matches the
+> >> given venue's region.
+> >>
+> >>   
+> >>     
+> >>> The event object's venue attribute references a venue object.
+> >>> A region does not have state or behavior, so it does not need to be an
+> >>> object - its just an array.
+> >>>     
+> >>>       
+> >> Regions have their own model.  The model contains a name
+> >> attribute and not much else.
+> >>
+> >>   
+> >>     
+> >>> The venue object has one or more rooms.
+> >>>
+> >>> The event object also has references to one or more sessions.
+> >>>     
+> >>>       
+> >>   
+> >>     
+> >>> I think of a session as the child of an event, since it inherits all of
+> >>> the attributes of its parent.
+> >>> I understand that in our system it isn't modeled this way since
+> >>> inheritance doesn't work as expected.
+> >>>     
+> >>>       
+> >> It's not modeled this way in our system because a session
+> >> is not a special type of event, but rather an object that
+> >> is a part of an event.  There is a one-to-many relationship
+> >> between the event and session models, producing an
+> >> 'event' attribute for each session and a 'sessions' attribute
+> >> on each events.  Every session must have an associated event
+> >> on creation.
+> >>
+> >> We know a lot more about Django inheritance nowadays.
+> >>
+> >>   
+> >>     
+> >>> A session object does NOT need its own venue attribute. It should
+> >>> inherit from the event, etc.
+> >>>     
+> >>>       
+> >> Correct, the session has no venue attribute.
+> >>
+> >>   
+> >>     
+> >>> The session should also have a venue.room
+> >>>     
+> >>>       
+> >> Sessions each have a room attribute.  Rooms have their
+> >> own Django model, with a one-to-many relationship between
+> >> the venue and room models.  By means of this relationship,
+> >> each room has a 'venue' attribute, and each session
+> >> has a 'rooms' attribute.
+> >>
+> >>   
+> >>     
+> >>> Each room has a unique name and a capacity value.
+> >>>     
+> >>>       
+> >> Room names are not necessarily unique across venues.
+> >> There is no current code to ensure that they are unique
+> >> within venues, which is the subject of ticket #832.
+> >>
+> >>   
+> >>     
+> >>> The venue.room capacity value is how the system should determine the
+> >>> total capacity on event user roles
+> >>>     
+> >>>       
+> >> Correct.  Each room object has a required non-negative integer
+> >> attribute called 'capacity'.
+> >>
+> >>   
+> >>     
+> >>> The capacity limits for each event user role are stored in the course
+> >>> template.
+> >>>     
+> >>>       
+> >> We have a course_user_role_requirement model with required 'min'
+> >> and 'max' attributes that are non-negative integers.  There is
+> >> a one-to-many relationship between the course model and
+> >> the course_user_role_requirements model, represented by the
+> >> 'course_user_role_requirements' attribute on the course model
+> >> and the 'course' attribute on the course_user_role_requirement
+> >> model.
+> >>
+> >>   
+> >>     
+> >>> When an event of a course is created, and a room is assigned, the
+> >>> venue.room capacity should reduce the STUDENT default user role value,
+> >>> until the total value of all user roles is equal to the room capacity
+> >>>       
+> > value.
+> >   
+> >>>     
+> >>>       
+> >> Events are not associated with courses, but sessions are.  I'm
+> >> assuming that you must have meant sessions.
+> >>
+> >> The session manager doesn't currently "inherit" from course user
+> >> role requirements at all.  This should be done in the session
+> >> manager's creation method by creating new session_user_role_requirements
+> >> based on the course's course_user_role_requirements, which is
+> >> the subject of ticket #833.  Of course, nothing happens to
+> >> the session user role requirements made on a session vis-a-vis
+> >> the session's room becuase the session user role requirements aren't
+> >> created automatically yet.
+> >>
+> >>
+> >> Here are relevant portions of the output from my Django model analyzer
+> >> (with the latest output in trac under the 'Code analysis' tab
+> >> as always):
+> >>
+> >> ============================
+> >> Model event:
+> >> fields:
+> >>   description : TextField
+> >>   end : DateField
+> >>   final_type : ForeignKey
+> >>   id : AutoField
+> >>   lead_time : PositiveIntegerField
+> >>   name : CharField
+> >>   notes : ManyToManyField
+> >>   owner : ForeignKey
+> >>   product_line : ForeignKey
+> >>   region : ForeignKey
+> >>   sent_reminders : BooleanField
+> >>   start : DateField
+> >>   title : CharField
+> >>   venue : ForeignKey
+> >> related object managers:
+> >>   event_fees:
+> >>     source: event_fee, type: ForeignKey
+> >>   notify_cfgs:
+> >>     source: evt_enroll_stat_chg_notify_cfg, type: ForeignKey
+> >>   notify_cfgs:
+> >>     source: evt_notify_cfg, type: ForeignKey
+> >>   notify_cfgs:
+> >>     source: evt_reminder_cfg, type: ForeignKey
+> >>   notify_cfgs:
+> >>     source: evt_stat_chg_notify_cfg, type: ForeignKey
+> >>   sessions:
+> >>     source: session, type: ForeignKey
+> >> relations:
+> >>   final_type (ForeignKey) -> ContentType []
+> >>   notes (ManyToManyField) -> note []
+> >>     symmetrical: True
+> >>     through: None
+> >>   owner (ForeignKey) -> user []
+> >>   product_line (ForeignKey) -> product_line []
+> >>   region (ForeignKey) -> region []
+> >>   venue (ForeignKey) -> venue []
+> >>
+> >> ============================
+> >> Model session:
+> >> fields:
+> >>   active : BooleanField
+> >>   audience : CharField
+> >>   blame : ForeignKey
+> >>   confirmed : BooleanField
+> >>   course : ForeignKey
+> >>   default_price : PositiveIntegerField
+> >>   description : TextField
+> >>   end : DateTimeField
+> >>   evaluation : OneToOneField
+> >>   event : ForeignKey
+> >>   final_type : ForeignKey
+> >>   graphic : ImageField
+> >>   id : AutoField
+> >>   modality : CharField
+> >>   name : CharField
+> >>   notes : ManyToManyField
+> >>   room : ForeignKey
+> >>   start : DateTimeField
+> >>   status : CharField
+> >>   title : CharField
+> >>   url : URLField
+> >> related object managers:
+> >> [     source: session_resource_type_requirement, type: ForeignKey ]
+> >>   session_user_role_requirements:
+> >>     source: session_user_role_requirement, type: ForeignKey
+> >> relations:
+> >>   blame (ForeignKey) -> blame []
+> >>   course (ForeignKey) -> course []
+> >>   evaluation (OneToOneField) -> exam []
+> >>   event (ForeignKey) -> event []
+> >>   final_type (ForeignKey) -> ContentType []
+> >>   notes (ManyToManyField) -> note []
+> >>     symmetrical: True
+> >>     through: None
+> >>   room (ForeignKey) -> room []
+> >>
+> >> ============================
+> >> Model venue:
+> >> fields:
+> >>   active : BooleanField
+> >>   address : ForeignKey
+> >>   blame : ForeignKey
+> >>   contact : CharField
+> >>   final_type : ForeignKey
+> >>   id : AutoField
+> >>   name : CharField
+> >>   notes : ManyToManyField
+> >>   phone : CharField
+> >>   region : ForeignKey
+> >> related object managers:
+> >>   events:
+> >>     source: event, type: ForeignKey
+> >>   rooms:
+> >>     source: room, type: ForeignKey
+> >> relations:
+> >>   address (ForeignKey) -> address []
+> >>   blame (ForeignKey) -> blame []
+> >>   final_type (ForeignKey) -> ContentType []
+> >>   notes (ManyToManyField) -> note []
+> >>     symmetrical: True
+> >>     through: None
+> >>   region (ForeignKey) -> region []
+> >>
+> >> ============================
+> >> Model room:
+> >> fields:
+> >>   blame : ForeignKey
+> >>   capacity : PositiveIntegerField
+> >>   final_type : ForeignKey
+> >>   id : AutoField
+> >>   name : CharField
+> >>   notes : ManyToManyField
+> >>   number : CharField
+> >>   venue : ForeignKey
+> >> related object managers:
+> >>   sessions:
+> >>     source: session, type: ForeignKey
+> >> relations:
+> >>   blame (ForeignKey) -> blame []
+> >>   final_type (ForeignKey) -> ContentType []
+> >>   notes (ManyToManyField) -> note []
+> >>     symmetrical: True
+> >>     through: None
+> >>   venue (ForeignKey) -> venue []
+> >>
+> >>   
+> >>     
+> >>> -Ryan
+> >>>
+> >>>
+> >>>
+> >>>
+> >>>
+> >>>
+> >>> Peter Miller wrote:
+> >>>     
+> >>>       
+> >>>> I think we started this discussion before, but I don't know if it got
+> >>>> resolved.
+> >>>>
+> >>>> Currently an event object has a venue attribute, and a session has a
+> >>>> region as well as a venue attribute.
+> >>>>
+> >>>> If an event is a wrapper around multiple sessions, doesn't it make
+> >>>> sense that the venue AND region should be on the event, not the
+> >>>> session(s)? Can a session logically be in a separate venue/region from
+> >>>> its event?
+> >>>>
+> >>>> There doesn't appear to be any use of a room attribute. Venues have
+> >>>> rooms, but a session should be associated with a room, also. Perhaps
+> >>>> that is why a session currently has a venue; yesterday we decided that
+> >>>> every venue must have at least one room defined, so it will always be
+> >>>> possible to assign a room to a session.
+> >>>>
+> >>>> This is important to resolve NOW, as AT&T is definitely using the
+> >>>> region/venue/room concepts.
+> >>>>
+> >>>> P.
+> >>>>
+> >>>> ------------------------------------------------------------------------
+> >>>>
+> >>>> _______________________________________________
+> >>>> Powerregdev mailing list
+> >>>> Powerregdev@americanri.com
+> >>>> http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev
+> >>>>   
+> >>>>       
+> >>>>         
+> >>> _______________________________________________
+> >>> Powerregdev mailing list
+> >>> Powerregdev@americanri.com
+> >>> http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev
+> >>>     
+> >>>       
+> >>   
+> >>     
+> >
+> > _______________________________________________
+> > Powerregdev mailing list
+> > Powerregdev@americanri.com
+> > http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev
+> >
+> > _______________________________________________
+> > Powerregdev mailing list
+> > Powerregdev@americanri.com
+> > http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev
+> >   
+> 
+> _______________________________________________
+> Powerregdev mailing list
+> Powerregdev@americanri.com
+> http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev
+
+-- 
+===================================
+Andrew D. Ball
+aball@americanri.com
+Software Engineer
+American Research Institute, Inc.
+http://www.americanri.com/
+_______________________________________________
+Powerregdev mailing list
+Powerregdev@americanri.com
+http://cliff.americanri.com.ofc/cgi-bin/mailman/listinfo/powerregdev
+

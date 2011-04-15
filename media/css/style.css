@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    font-family: arial, helvetica;
+    margin: 1em;
+}
+h1, h2, p, form, input {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+#container {
+    width: 400px;
+    margin: 0 auto;
+}
+#footer {
+    display: none;
+}

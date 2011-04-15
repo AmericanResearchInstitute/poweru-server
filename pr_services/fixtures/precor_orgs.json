@@ -1,0 +1,312 @@
+[
+    {
+        "pk": 1, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:09", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:09", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": null, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Sales", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:12", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:12", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 1, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Consumer Dealers", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:15", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:15", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 1, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Commercial Dealers", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:18", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:18", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 2, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Con Dealer 1", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:23", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:23", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 2, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Con Dealer 2", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:27", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:27", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 3, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Com Dealer 1", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:30", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:30", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 3, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Com Dealer 2", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:36", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:36", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": null, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Support", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:39", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:39", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 8, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Affiliate 1", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "pr_services.organization", 
+        "fields": {
+            "save_timestamp": "2011-02-13 21:15:42", 
+            "photo": "", 
+            "create_timestamp": "2011-02-13 21:15:42", 
+            "owner": null, 
+            "primary_contact_first_name": "", 
+            "primary_contact_email": "", 
+            "primary_contact_cell_phone": null, 
+            "department": null, 
+            "email": "", 
+            "fax": null, 
+            "description": "", 
+            "parent": 8, 
+            "primary_contact_other_phone": null, 
+            "phone": null, 
+            "address": null, 
+            "active": true, 
+            "name": "Affiliate 2", 
+            "final_type": [
+                "pr_services", 
+                "organization"
+            ], 
+            "primary_contact_office_phone": null, 
+            "url": null, 
+            "notes": [], 
+            "primary_contact_last_name": ""
+        }
+    }
+]

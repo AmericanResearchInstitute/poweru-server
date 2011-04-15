@@ -1,0 +1,14 @@
+{% autoescape off %}
+{{ date }}
+
+{{ user.first_name }} {{ user.last_name }}
+{{ organization.name }}
+
+Dear {{ user.full_name }},
+
+Success! You have reset your password. Your new password is {{ new_password }}.
+
+Best regards,
+
+Administrator
+Precor Experience Training{% endautoescape %}

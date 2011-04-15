@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exam xmlns="http://americanri.com/2009/poweru/exam/1.0"
+      id="instructor_exam"
+      title="Constant Contact Final Exam"
+      passing_score = "90">
+
+    <question_pool title="Getting to Know Constant Contact">
+
+        <question type="choice">
+            <rejoinder>No, that is incorrect. The correct answer is 'Learning Center.' You can find product tutorials and guides in the Learning Center area of the Constant Contact website. See Module 1: Getting to Know Constant Contact for more information.</rejoinder>
+            <label>Where on the Constant Contact website can product tutorials and guides be found?</label>
+            <answer><label>Local Educator Support Page</label></answer>
+            <answer><label>User Community</label></answer>
+            <answer><label>Constant Contact University</label></answer>
+            <answer correct="true"><label>Learning Center</label></answer>
+        </question>
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is False. Customer can find Information on email marketing seminars in their area in the 'Local Seminars' section of the website. See Module 1: Getting to Know Constant Contact for more information.</rejoinder>
+            <label>True or False? A customer can find Information on email marketing seminars in their area in the 'Email coaching and support' section of the website.</label>
+            <answer value="true"><label>True</label></answer>
+            <answer value="false" correct = "1"><label>False</label></answer>
+        </question>
+
+        <question type="choice" widget="CheckboxSelectMultiple" max_answers="none">
+            <rejoinder>No, that is incorrect. The correct answers are 'Industry-specific forums', Location-specific 'neighborhoods', and 'Idea exchange forums'. Discussion board sub-categories include industry-specific forums, location-specific 'neighborhoods,' and idea exchange forums. See Module 1: Getting to Know Constant Contact for more information.</rejoinder>
+            <label>ConnectUp! Community discussion board sub-categories include (check all that apply):</label>
+            <answer correct="true"><label>Industry-specific forums</label></answer>
+            <answer correct="true"><label>Location-specific neighborhoods</label></answer>
+            <answer><label>Presentation tips and strategies</label></answer>
+            <answer correct="true"><label>Idea exchange forums</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Your Role as a Trained Presenter">
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is False. See Module 2: Your Role as a Trained Presenter for more information.</rejoinder>
+            <label>True or False? To earn your trained presenter designation, you must be a Constant Contact customer in good standing.</label>
+            <answer value="false"><label>True</label></answer>
+            <answer value="true" correct="true"><label>False</label></answer>
+        </question>
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is False. Most presenters offer workshops free of charge. The benefits are increased visibility and the perception that they are an email marketing 'expert'. See Module 2: Your Role as a Trained Presenter for more information.</rejoinder>
+            <label>True or False? Almost everyone who achieves trained presenter status can earn additional income by conducting fee-based workshops.</label>
+            <answer value="true"><label>True</label></answer>
+            <answer value="false" correct="true"><label>False</label></answer>
+        </question>
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is True. Trained presenter services are provided as independent contractors, not as employees of Constant Contact Inc. See Module 2: Your Role as a Trained Presenter for more information.</rejoinder>
+            <label>True or False? Trained presenters are not considered employees of Constant Contact.</label>
+            <answer value="true" correct="true"><label>True</label></answer>
+            <answer value="false"><label>False</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Email Marketing Basics">
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'The popularity of email makes it easy to reach targeted groups.' The popularity of email makes it easy to reach targeted groups. See Module 3: Email Marketing Basics for more information.</rejoinder>
+            <label>Why is professional email marketing so effective?</label>
+            <answer correct="true"><label>The popularity of email makes it easy to reach targeted groups</label></answer>
+            <answer><label>Almost everyone in America owns a computer</label></answer>
+            <answer><label>Most people can tell the difference between good email and spam</label></answer>
+            <answer><label>It's free</label></answer>
+        </question>
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>Not correct - No, that is incorrect. The correct words, in order, are professional, interested, and valuable.</rejoinder>
+            <label>Select the correct word sequence to fill in the blanks: Email marketing is delivering _________ email communication to a(n) _______ audience containing information they find _________).</label>
+            <answer><label>valuable, interested, important</label></answer>
+            <answer><label>important, professional, valuable</label></answer>
+            <answer correct="true"><label>professional, interested, valuable</label></answer>
+            <answer><label>vital, valuable, important</label></answer>
+        </question>
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is False. Benefits of using an email service provider include improving email delivery, tracking results, and obeying laws related to spam. See Module 3: Email Marketing Basics for more information.</rejoinder>
+            <label>True or False? The main benefit of using email service provider is that your messages will never be considered spam.</label>
+            <answer value="true"><label>True</label></answer>
+            <answer value="false" correct="true"><label>False</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Building a Quality Email List">
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'Purchasing from list vendors'. Purchasing from list vendors is not a recommended way to build your list. See Module 4: Building a Quality Email List for more information.</rejoinder>
+            <label>Which of the following is not a recommended way to collect contact information to build your list?</label>
+            <answer><label>Service or sales calls</label></answer>
+            <answer><label>Email signatures</label></answer>
+            <answer><label>In-store guest books</label></answer>
+            <answer correct="true"><label>Purchasing from list vendors</label></answer>
+            <answer><label>Website signups</label></answer>
+        </question>
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is False. Confirmation emails are used as a polite way of asking a new subscriber, 'Are you sure you want to be on this email list?' See Module 4: Building a Quality Email List for more information.</rejoinder>
+            <label>True or False? Confirmation emails are used to entice new subscribers to immediately begin purchasing your products or using your services.</label>
+            <answer value="true"><label>True</label></answer>
+            <answer value="false" correct="true"><label>False</label></answer>
+        </question>
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'They allow someone to easily remove themselves from your list.'. Permission reminders allow someone to easily remove themselves from your list. See Module 4: Building a Quality Email List for more information.</rejoinder>
+            <label>The greatest benefit of sending permission reminders is:</label>
+            <answer><label>They remind readers that they should expect email from you.</label></answer>
+            <answer><label>Subscribers can automatically add you to their 'safe senders' list.</label></answer>
+            <answer correct="true"><label>They allow someone to easily remove themselves from your list.</label></answer>
+            <answer><label>They drive readers to your website.</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Creating Valuable Email Content">
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is True. See Module 5: Creating Valuable Email Content for more information.</rejoinder>
+            <label>The four choices you want your subscribers to consider every time they receive your messages are 'Save it', 'Forward it', 'Print it out', 'Take action on it immediately'</label>
+            <answer value="true" correct="true"><label>True</label></answer>
+            <answer value="false"><label>False</label></answer>
+        </question>
+
+        <question type="choice" widget="CheckboxSelectMultiple" max_answers="none">
+            <rejoinder>No, that is incorrect. The correct answers are 'Promotional', 'Informative', and 'Relational'. Email content provides value to your readers when it is promotional, informative, and relational. See Module 5: Creating Valuable Email Content for more information.</rejoinder>
+            <label>You can feel confident that your email content will provide value to your readers if it fits into which of the following categories? (Check all that apply.)</label>
+            <answer correct="true"><label>Promotional</label></answer>
+            <answer><label>Persuasive</label></answer>
+            <answer correct="true"><label>Informative</label></answer>
+            <answer correct="true"><label>Relational</label></answer>
+        </question>
+    
+        <question type="choice" widget="CheckboxSelectMultiple" max_answers="none">
+            <rejoinder>No, that is incorrect. The correct answers are 'Newsletters', 'Promotions, invitations, and surveys', and 'Announcements'. The three email formats that can help you meet your marketing goals are newsletters; promotions, invitations, and surveys; and announcements. See Module 5: Creating Valuable Email Content for more information.</rejoinder>
+            <label>Which three email formats does Constant Contact recommend you use to help meet your marketing goals? (Check all that apply.)</label>
+            <answer correct="true"><label>Newsletters</label></answer>
+            <answer><label>Daily Digests</label></answer>
+            <answer correct="true"><label>Promotions, invitations, and surveys</label></answer>
+            <answer correct="true"><label>Announcements</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Getting Emails Delivered and Read">
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'It can determine whether your email content is likely to be filtered or blocked before you send it.'. Constant Contact's anti-spam check can determine whether your email content is likely to be filtered or blocked before you send it. See Module 6: Getting Email Delivered and Read for more information.</rejoinder>
+            <label>What is the benefit of Constant Contact's anti-spam check?</label>
+            <answer><label>It can help you decide if your audience will consider your message 'valuable'.</label></answer>
+            <answer><label>It prevents spam from clogging your inbox.</label></answer>
+            <answer correct="true"><label>It can determine whether your email content is likely to be filtered or blocked before you send it.</label></answer>
+            <answer><label>It uses smart technology to write messages for you that will not be blocked by spam filters.</label></answer>
+        </question>
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'classes@paintingworks.com'. The word 'classes' tells the reader what this email is about. By choosing the domain name 'paintingworks.com', readers will immediately know who the emails are from. See Module 6: Getting Email Delivered and Read for more information.</rejoinder>
+            <label>Which 'from' line is formatted to appeal to the widest audience?</label>
+            <answer><label>bjones@nwrt.mph.com</label></answer>
+            <answer><label>Taylor, Gloria</label></answer>
+            <answer><label>This Week's Newsletter</label></answer>
+            <answer correct="true"><label>classes@paintingworks.com</label></answer>
+        </question>
+
+        <question type="choice" widget="CheckboxSelectMultiple" max_answers="none">
+            <rejoinder>No, that is incorrect. The correct answers are 'Keep it short and simple: 30 to 40 characters (or 5-8 words) including spaces.', 'Capitalize and punctuate carefully.', and 'Avoid copying the techniques inherent in spam emails.'. See Module 6: Getting Email Delivered and Read for more information.</rejoinder>
+            <label>Which of the following represent best practices for writing subject lines? (Choose all that apply.)</label>
+            <answer><label>Include the name of your organization whenever possible.</label></answer>
+            <answer correct="true"><label>Keep it short and simple: 30 to 40 characters (or 5-8 words) including spaces.</label></answer>
+            <answer correct="true"><label>Capitalize and punctuate carefully.</label></answer>
+            <answer correct="true"><label>Avoid copying the techniques inherent in spam emails.</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Increasing Email Click-Through and Response Rates">
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'There was a problem delivering the message, but the email address that the message was sent to is still a good one.'. A 'soft' bounce means that there was a problem delivering the message, but the email address that the message was sent to is still a good one. See Module 7: Increasing Email Click-Through and Response Rates for more information.</rejoinder>
+            <label>What is the correct definition for a 'soft' bounce?</label>
+            <answer correct="true"><label>There was a problem delivering the message, but the email address that the message was sent to is still a good one.</label></answer>
+            <answer><label>The message was returned because the email address does not exist or is no longer valid.</label></answer>
+        </question>
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is True. An email is only considered 'open' when the recipient can see the images in the email, and/or when the recipient clicks on a link in the email. See Module 7: Increasing Email Click-Through and Response Rates for more information.</rejoinder>
+            <label>True or False? An email is only considered 'open' when the recipient can see the images in the email, and/or when the recipient clicks on a link in the email.</label>
+            <answer value="true" correct="true"><label>True</label></answer>
+            <answer value="false"><label>False</label></answer>
+        </question>
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'Inconsistent formatting and layout'. Inconsistent formatting and layout is NOT one of the reasons that people unsubscribe from email lists. See Module 7: Increasing Email Click-Through and Response Rates for more information.</rejoinder>
+            <label>Which of the following is NOT one of the three primary reasons that people unsubscribe from email lists?</label>
+            <answer><label>Over-communication</label></answer>
+            <answer correct="true"><label>Inconsistent formatting and layout</label></answer>
+            <answer><label>Irrelevant content</label></answer>
+            <answer><label>Poor targeting</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Power of Online Surveys Module">
+
+        <question type="choice" widget="CheckboxSelectMultiple" max_answers="none">
+            <rejoinder>No, that is incorrect. The correct answers are 'Customer Satisfaction survey' and 'Marketing Research survey'. The two categories of surveys are the Customer Satisfaction survey and the Marketing Research survey. See Module 8: Power of Online Surveys Module for more information.</rejoinder>
+            <label>Which of the following are the two categories of surveys?</label>
+            <answer correct="true"><label>Customer Satisfaction survey</label></answer>
+            <answer><label>Buying Behavior survey</label></answer>
+            <answer><label>Post-event survey</label></answer>
+            <answer correct="true"><label>Marketing Research survey</label></answer>
+        </question>
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'True/False'. True/False is not one of the four basic types of survey questions. See Module 8: Power of Online Surveys Module for more information.</rejoinder>
+            <label>Which of the following is not one of the four basic types of survey questions?</label>
+            <answer><label>Close Ended</label></answer>
+            <answer><label>Open Ended</label></answer>
+            <answer><label>Rating and Ranking</label></answer>
+            <answer correct="true"><label>True/False</label></answer>
+        </question>
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is ' action on what you have learned'. The final step in working with survey data is to take action on what you have learned. See Module 8: Power of Online Surveys Module for more information.</rejoinder>
+            <label>After grouping your respondents and grouping your answers, what is the final basic step in working with survey data?</label>
+            <answer><label>Create a spreadsheet with your information</label></answer>
+            <answer correct="true"><label>Take action on what you have learned</label></answer>
+            <answer><label>Prepare a new survey to verify your information</label></answer>
+            <answer><label>Chart your data</label></answer>
+        </question>
+
+    </question_pool>
+
+    <question_pool title="Tips and Techniques">
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'Know your audience'. Knowing your audience is always important, but since you know that your audience is coming to hear you speak on the basics of email marketing, you can focus instead on your material, your timing, and your equipment. See Module 9: Tips and Techniques for more information.</rejoinder>
+            <label>Which of the following is NOT one of the three key steps in preparing your presentation to have an impact?</label>
+            <answer><label>Know your timing</label></answer>
+            <answer><label>Know your material</label></answer>
+            <answer><label>Know your equipment</label></answer>
+            <answer correct="true"><label>Know your audience</label></answer>
+        </question>
+
+        <question type="bool" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is False. The best way to hook your audience is to tell them a good story. See Module 9: Tips and Techniques for more information.</rejoinder>
+            <label>True or False? The best way to hook your audience in your introduction is to tell them how much money they can save by using email marketing.</label>
+            <answer value="true"><label>True</label></answer>
+            <answer value="false" correct="true"><label>False</label></answer>
+        </question>
+
+        <question type="choice" widget="RadioSelect">
+            <rejoinder>No, that is incorrect. The correct answer is 'Know your material'. The key to presentation confidence is to 'know your material' See Module 9: Tips and Techniques for more information.</rejoinder>
+            <label>What is the key to presentation confidence?</label>
+            <answer><label>Getting lots of sleep the night before you present</label></answer>
+            <answer><label>Getting the audience on your side</label></answer>
+            <answer><label>Using high-quality presentation equipment</label></answer>
+            <answer correct="true"><label>Know your material</label></answer>
+        </question>
+
+    </question_pool>
+
+</exam>

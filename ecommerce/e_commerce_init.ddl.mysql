@@ -1,0 +1,6 @@
+CREATE TABLE `raw_response` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `text` text NOT NULL,
+  `time` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8

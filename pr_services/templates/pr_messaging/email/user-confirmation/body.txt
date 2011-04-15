@@ -1,0 +1,19 @@
+{% autoescape off %}
+{{ date }}
+
+{{ user.first_name }} {{ user.last_name }}
+{{ organization.name }}
+
+Dear {{ user.full_name }},
+
+Congratulations!  You have successfully registered in the Precor Experience Training learning management system.  Before you can login, you must confirm 
+your email address. You may do so by clicking on the following link: 
+
+
+{{ backend_url }}{% url confirm_email confirmation_code %}
+
+
+Best regards,
+
+Administrator
+Precor Experience Training{% endautoescape %}

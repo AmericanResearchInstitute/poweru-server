@@ -1,0 +1,257 @@
+Here are our dependencies on external code.
+
+(1) Django
+license: BSD-style, see [1]
+URL: http://www.djangoproject.com/
+purpose: application framework
+version: 1.1.1
+location: //python/lib/trunk/django
+  We maintain a local branch of Django where we implement necessary 
+  changes that have not yet been committed to the Django trunk or officially
+  backported to the version we're using.
+
+(2) django-xmlrpc
+license: "New BSD License", see [2]
+URL: http://code.google.com/p/django-xmlrpc/
+purpose: conveniently build XML-RPC services on top of Django
+version: from latest changeset in bzr (currently modified by michael hrivnak)
+
+(3) PIL (Python Imaging Library)
+license: BSD-style, see [3]
+URL: http://www.pythonware.com/products/pil/
+purpose: Required for the validation done by django's image file data type.
+version: 1.1.6
+location: Debian lenny package python-pil
+
+(4) django-tagging
+license: MIT License, see [4]
+URL: http://code.google.com/p/django-tagging/
+purpose: tagging of various models, including pr_services.models.Video
+version: pulled from the trunk in Subversion, currently revision 156 of 
+http://django-tagging.googlecode.com/svn/trunk
+location: //python/trunk/power_reg/tagging
+
+(5) PyAMF
+license: MIT License, see [5]
+URL: http://pyamf.org
+purpose: exposing RPC via Adobe AMF (Action Message Format)
+version: 0.5.1
+location: We build a debian package in-house from unmodified source.
+  Due to the compiled C components, packaging provides the simplest
+  distribution method for our needs
+
+(6) python-pycurl
+license: PycURL is dual licensed under the LGPL and an MIT/X derivative license 
+based on the cURL license. You can redistribute and/or modify PycURL according 
+to the terms of either license. 
+URL: http://pycurl.sourceforge.net/
+purpose: testing our web services
+version: >= 7.18.0
+location: Debian lenny package python-pycurl
+
+(7) django-south
+license: Apache License 2.0
+URL: http://south.aeracode.org/
+purpose: database schema migrations
+version: 0.7
+
+(8) python-memcached
+
+(9) Python MySQLdb
+
+(10) psycopg2
+
+(11) ZSI
+
+===========================================================================
+Andrew D. Ball
+aball@americanri.com
+
+Sean Myers
+smyers@americanri.com
+===========================================================================
+
+[1] text of copyright notice from
+  [http://code.djangoproject.com/browser/django/tags/releases/0.96.1/LICENSE]:
+==
+Copyright (c) 2005, the Lawrence Journal-World
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, 
+       this list of conditions and the following disclaimer.
+    
+    2. Redistributions in binary form must reproduce the above copyright 
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+
+    3. Neither the name of Django nor the names of its contributors may be used
+       to endorse or promote products derived from this software without
+       specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+==
+
+[2] text of copyright notice from
+    /usr/share/python-support/python-django-xmlrpc/django_xmlrpc/__init__.py:
+==
+Copyright (c) 2007, Graham Binns http://launchpad.net/~codedragon
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
+      and/or other materials provided with the distribution.
+    * Neither the name of the <ORGANIZATION> nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+==
+
+[3] text of copyright notice from /usr/share/doc/python-imaging/copright:
+==
+The Python Imaging Library is
+
+Copyright (c) 1997-2001 by Secret Labs AB
+Copyright (c) 1995-2001 by Fredrik Lundh
+
+By obtaining, using, and/or copying this software and/or its 
+associated documentation, you agree that you have read, understood,
+and will comply with the following terms and conditions:
+
+Permission to use, copy, modify, and distribute this software and its 
+associated documentation for any purpose and without fee is hereby
+granted, provided that the above copyright notice appears in all 
+copies, and that both that copyright notice and this permission notice
+appear in supporting documentation, and that the name of Secret Labs
+AB or the author not be used in advertising or publicity pertaining to
+distribution of the software without specific, written prior
+permission.
+
+SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO
+THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND 
+FITNESS.  IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR BE LIABLE FOR 
+ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+==
+
+[4] The license file for django-tagging as currently checked out from 
+Subversion:
+==
+Django Tagging
+--------------
+
+Copyright (c) 2007, Jonathan Buchanan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Initially based on code from James Bennett's Cab:
+
+Cab
+---
+
+Copyright (c) 2007, James Bennett
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above
+      copyright notice, this list of conditions and the following
+      disclaimer in the documentation and/or other materials provided
+      with the distribution.
+    * Neither the name of the author nor the names of other
+      contributors may be used to endorse or promote products derived
+      from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+==
+
+[5] text of PyAMF license, from http://pyamf.org/license.html
+==
+PyAMF is available under the terms of the MIT license. The full text of the MIT 
+license is included below.
+
+MIT License
+
+Copyright (c) 2007-2010 The PyAMF Project. All rights reserved.
+
+    * Arnar Birgisson
+    * Thijs Triemstra
+    * Nick Joyce
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the "Software"), to deal in 
+the Software without restriction, including without limitation the rights to 
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+of the Software, and to permit persons to whom the Software is furnished to do 
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.
+==

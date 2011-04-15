@@ -1,0 +1,72 @@
+[
+    {
+        "pk": 1, 
+        "model": "pr_services.orgrole", 
+        "fields": {
+            "default": false,
+            "save_timestamp": "2011-02-08 21:20:33", 
+            "final_type": [
+                "pr_services", 
+                "orgrole"
+            ], 
+            "name": "Administrator", 
+            "create_timestamp": "2011-02-08 21:20:33"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "pr_services.orgrole", 
+        "fields": {
+            "default": false,
+            "save_timestamp": "2011-02-08 21:20:40", 
+            "final_type": [
+                "pr_services", 
+                "orgrole"
+            ], 
+            "name": "ReportingManager", 
+            "create_timestamp": "2011-02-08 21:20:40"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "pr_services.orgrole", 
+        "fields": {
+            "default": false,
+            "save_timestamp": "2011-02-08 21:20:50", 
+            "final_type": [
+                "pr_services", 
+                "orgrole"
+            ], 
+            "name": "ContentManager", 
+            "create_timestamp": "2011-02-08 21:20:50"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "pr_services.orgrole", 
+        "fields": {
+            "default": false,
+            "save_timestamp": "2011-02-08 21:20:59", 
+            "final_type": [
+                "pr_services", 
+                "orgrole"
+            ], 
+            "name": "Instructor", 
+            "create_timestamp": "2011-02-08 21:20:59"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "pr_services.orgrole", 
+        "fields": {
+            "default": true,
+            "save_timestamp": "2011-02-08 21:21:07", 
+            "final_type": [
+                "pr_services", 
+                "orgrole"
+            ], 
+            "name": "User", 
+            "create_timestamp": "2011-02-08 21:21:07"
+        }
+    }
+]

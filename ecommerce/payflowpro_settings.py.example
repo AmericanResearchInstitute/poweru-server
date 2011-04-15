@@ -1,0 +1,21 @@
+# Use this for production
+#URL = 'https://payflowpro.paypal.com'
+
+# Use this for testing
+URL = 'https://pilot-payflowpro.paypal.com'
+
+# The ID provided to you by the authorized PayPal Reseller who registered you
+# for the Payflow SDK.
+USER = ''
+
+# The password that you defined while registering for the account.
+PWD = ''
+
+# Your merchant login ID that you created when you registered for the account. This is probably the same value as USER.
+VENDOR = ''
+
+# The ID provided to you by the authorized PayPal Reseller who registered you
+# for the Payflow SDK. If you purchased your account directly from PayPal, use PayPal
+PARTNER = ''
+
+# vim:tabstop=4 shiftwidth=4 expandtab

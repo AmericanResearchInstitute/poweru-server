@@ -1,0 +1,7 @@
+Known incompatibilities between our code and the next version of Django to which we are likely to upgrade.
+
+Current version: 0.96.1
+
+(1) pr_services.upload_manager uses request.FILES[file]['content'] to access an uploaded file's contents.  This has changed in more recent versions of django, which will require request.FILES[file].read().  See http://www.djangoproject.com/documentation/request_response/#attributes
+
+(2) This one isn't an incompatibility, but could be useful: The newer versions of Django have a new decimal field that we could use to represent money instead of how we currently do it (via storing cents).

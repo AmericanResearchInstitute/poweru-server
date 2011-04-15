@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>PowerReg SCORM Data Form</title>
+</head>
+<body>
+       <center>
+       <form id="form1" name="form1" action="{% url lms_commit %}" method="POST">
+		<!--NOTE: I changed the POST to a GET so that I could alert ,using JavaScript, the data that was being sent from here to the insertSCORMFSO.htm-->
+		<!--post the FLASH Shared object data to the LMS using the form below-->
+		<!--when the SCO launched fill the flashSO input with the data from your LMS that was from the last sco_session of this SCO-->
+
+           Shared Object:
+           <input id="flashSO" name="flashSO" type="text" value="{{ shared_object }}" style="width: 406px; height: 14px" />
+           <br>auth_token: <input name="auth_token" type="text" value="{{ auth_token }}">
+           <br>sco_session_id: <input name="sco_session_id" type="text" value="{{ sco_session_id }}">
+           <!--- <input onclick="javascript:parent.foo(form1.flashSO.value)" id="Button1" type="button" value="send to flash" />--->
+           <!--
+		   These data elements below are fake, the real ones will come from your architecture and yoru database
+cmpid=CO_001
+moduleid=MOD_001
+courseid=CRS_001
+uid=USER_001
+		   -->
+       </form>
+       </center>
+</body>
+</html>
+
+

@@ -1,0 +1,25 @@
+# Settings file for the ecommerce application
+
+# Set the merchant services provider.  This is currently one of:
+# 'paypal'
+# 'payflowpro'
+# 'virtual_merchant'
+ms_provider = 'paypal'
+
+# Database settings.  This database should be on a different host than the pr_services database.  Furthermore, that host should have nothing to do with email delivery, because if this database connection fails, email is the only notification.
+#
+# DDL for MySQL is in the e_commerce_init.ddl.mysql file, and DDL settings for SQLite3 are in
+# e_commerce_init.ddl.sqlite3.
+
+DATABASE_ENGINE = 'sqlite3' # sqlite3 or mysql
+DATABASE_NAME = '/Users/anball/databases/pr2-ecommerce'
+DATABASE_HOST = '' # not used with sqlite3
+DATABASE_USER = '' # not used with sqlite3
+DATABASE_PASSWORD = '' # not used with sqlite3
+DATABASE_PORT = '' # not used with sqlite3
+
+# When DEMO_MODE == True, any call to process_txn.charge() or
+# process_txn.credit() will return a fake successful response without ever using
+# one of the gateway modules.  Nothing will be logged in the database that is
+# configured above.
+DEMO_MODE = True

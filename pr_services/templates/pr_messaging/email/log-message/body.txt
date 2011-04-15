@@ -1,0 +1,3 @@
+The following {{ log_level|lower }} message was logged:
+
+{{ log_message }}

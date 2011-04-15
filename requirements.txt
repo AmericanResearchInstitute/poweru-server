@@ -1,0 +1,27 @@
+# pip requirements for running in a virtualenv
+
+# M2Crypto==0.20.2 (use direct download of source)
+http://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-0.20.2.tar.gz
+MySQL-python==1.2.3
+PIL==1.1.7
+PyAMF==0.5.1
+amqplib==0.6.1
+anyjson==0.3
+carrot==0.10.7
+celery==2.1.4
+django-celery==2.1.4
+django-mailer==0.1.0
+django-picklefield==0.1.9
+# django-storages==1.2a (use direct download of latest instead)
+http://bitbucket.org/david/django-storages/get/tip.tar.gz#egg=django-storages
+importlib==1.0.2
+psycopg2==2.3.2
+pycurl==7.19.0
+pyparsing==1.5.5
+python-dateutil==1.5
+# python-ldap==2.3.12 (must download, edit setup.cfg and use setup.py install)
+# http://pypi.python.org/packages/source/p/python-ldap/python-ldap-2.3.12.tar.gz
+python-memcached==1.47
+recaptcha-client==1.0.5
+simplejson==2.1.2
+wsgiref==0.1.2

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>{% block title %}{% endblock %}</title>
+{% if MEDIA_URL %}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/reset.css" />
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" />
+{% endif %}
+{% block extrastyle %}{% endblock %}
+{% block extrahead %}{% endblock %}
+</head>
+
+<!-- some portions of this page have been adapted from the Django admin site -->
+
+<body>
+
+<!-- Container -->
+<div id="container">
+    <!-- Header -->
+    <div id="header">
+        {% block logo %}{% endblock %}
+        {% block subtitle %}{% endblock %}
+        {% block nav-global %}{% endblock %}
+    </div>
+    <!-- END Header -->
+
+    <!-- Content -->
+    <div id="content">
+        {% block pretitle %}{% endblock %}
+        {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+        {% block content %}{% endblock %}
+    </div>
+    <!-- END Content -->
+
+    <div id="footer">
+    {% block footer %}{% endblock %}
+    </div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exam xmlns="http://americanri.com/2009/poweru/exam/1.0"
+      id="fasttrac_application"
+      title="FastTrac Application"
+      version_id="1" version_label="1.0" version_comment="from Subversion rxyz">
+
+	<question_pool id="initial_screening" title="Initial Screening Questions">
+		<question id="non_academic_programs" type="bool" widget="RadioSelect">
+			<label>Are you most interested in academic or non-academic programs?</label>
+			<answer value="true" next_question_pool="demographic_information">
+				<label>I am not seeking academic credit.  I want to apply for a non-academic program.</label>
+			</answer>
+			<answer value="false" end_exam="true">
+				<!-- If this answer is selected, the system is supposed to display
+				     the provider directory, filtering on Academic Providers -->
+				<label>I am seeking college credit or continuing education units.</label>
+			</answer>
+		</question>
+	</question_pool>
+	
+	<question_pool id="demographic_information" title="Demographic Information"
+		       randomize_questions="true">
+		<question type="int" widget="Select">
+			<label>How many businesses have you started?</label>
+			<answer value="0"><label>None</label></answer>
+			<answer value="1"><label>One</label></answer>
+			<answer value="2"><label>Two</label></answer>
+			<answer value="3"><label>Three</label></answer>
+			<answer value="4"><label>Four or more</label></answer>
+		</question>
+		
+		<question type="choice" widget="Select">
+			<label>How do you plan to finance your business?</label>
+			<answer><label>Personal funds</label></answer>
+			<answer><label>Credit cards</label></answer>
+			<answer><label>Friends and family</label></answer>
+			<answer><label>Customer revenue</label></answer>
+			<answer><label>Grants</label></answer>
+			<answer><label>Bank loans</label></answer>
+			<answer><label>Government loans</label></answer>
+			<answer><label>Angel/venture funding</label></answer>
+			<answer><label>Other</label></answer>
+		</question>
+		
+		<question type="choice" widget="Select">
+			<label>Highest level of education completed:</label>
+			<answer><label>less than high school</label></answer>
+			<answer><label>high school or GED</label></answer>
+			<answer><label>some college or community college</label></answer>
+			<answer><label>technical or vocational certificate or diploma</label></answer>
+			<answer><label>associate degree</label></answer>
+			<answer><label>bachelor's degree</label></answer>
+			<answer><label>graduate degree</label></answer>
+		</question>
+		
+		<question id="area_of_study_question" type="char" max_length="255" widget="TextInput">
+			<label>Please indicate your major, minor, or areas of emphasis.</label>
+		</question>
+		
+		<question id="employment_status_question" type="bool" widget="RadioSelect">
+			<label>Are you currently unemployed or underemployed?</label>
+			<answer value="true" next_question_pool="employment"><label>Yes</label></answer>
+			<answer value="false" next_question_pool="current_business_status_startup"><label>No</label></answer>
+		</question>
+	</question_pool>
+	
+	<question_pool id="employment" title="Employment">
+		<!-- employer name question redundancy -->
+		<question id="employer_name_question" type="char" widget="TextInput" max_length="100">
+			<label>Who is your current or last employer?</label>
+		</question>
+		<question type="choice" widget="Select">
+			<label>What is the industry or business of your current or last employer?</label>
+			<!-- industry choices -->
+			<answer><label>Agriculture</label></answer>
+			<answer><label>Forestry</label></answer>
+			<answer><label>Fishing and Hunting</label></answer>
+			<answer><label>Mining</label></answer>
+			<answer><label>Utilities</label></answer>
+			<answer><label>Construction</label></answer>
+			<answer><label>Manufacturing</label></answer>
+			<answer><label>Wholesale Trade</label></answer>
+			<answer><label>Retail Trade</label></answer>
+			<answer><label>Transportation and Warehousing</label></answer>
+			<answer><label>Information</label></answer>
+			<answer><label>Finance and Insurance</label></answer>
+			<answer><label>Real Estate, Rental, and Leasing</label></answer>
+			<answer><label>Professional, Scientific, and Technical Services</label></answer>
+			<answer><label>Management of Companies and Enterprises</label></answer>
+			<answer><label>Administrative and Support</label></answer>
+			<answer><label>Waste Management and Remediation Services</label></answer>
+			<answer><label>Education Services</label></answer>
+			<answer><label>Health Care and Social Assistance</label></answer>
+			<answer><label>Arts, Entertainment, and Recreation</label></answer>
+			<answer><label>Accommodation and Food Services</label></answer>
+			<answer><label>Other Services (except Public Administration)</label></answer>
+			<answer><label>Public Administration</label></answer>
+			<answer><label>Don't know</label></answer>
+		</question>
+		<question id="outplacement_or_workforce_development_assistance_question" type="bool" widget="RadioSelect">
+			<label>Are you currently receiving outplacement or workforce development assistance?</label>
+			<answer value="true"><label>Yes</label></answer>
+			<answer value="false"><label>No</label></answer>
+		</question>
+	</question_pool>
+	
+	<question_pool id="current_business_status_startup" title="Current Business Status STARTUP">
+		<question type="choice" widget="CheckboxSelectMultiple" min_answers="0">
+			<label>Current Business Status</label>
+			<help_text>What is your current business status? (Check all that apply.)</help_text>
+			<answer next_question_pool="startup_businesses">
+				<label>Don't have an idea yet</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Have an idea/concept</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Have proven feasibility through research</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Have written a business plan</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Ready to commercialize</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Have sold a few products/services</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Want to buy a business</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Looking at franchises</label>
+			</answer>
+			<answer next_question_pool="startup_businesses">
+				<label>Want to turn a part-time business into full-time</label>
+			</answer>
+		</question>
+	</question_pool>
+	
+	<question_pool id="startup_businesses" title="Start-up Businesses"
+                   next_question_pool="technology_check">
+		<question type="char" widget="Textarea" max_length="255">
+			<label>Business Description</label>
+			<help_text>Describe your business without sharing proprietary information or trade secrets.</help_text>
+		</question>
+		<question type="int" widget="Select">
+			<label>Years of Experience</label>
+			<help_text>How many years of experience do you have in the industry in which you plan to start your business?</help_text>
+			<answer value="1"><label>One or less</label></answer>
+			<answer value="2"><label>Two</label></answer>
+			<answer value="3"><label>Three</label></answer>
+			<answer value="4"><label>Four</label></answer>
+			<answer value="5"><label>Five</label></answer>
+			<answer value="6"><label>Six</label></answer>
+			<answer value="7"><label>Seven</label></answer>
+			<answer value="8"><label>Eight</label></answer>
+			<answer value="9"><label>Nine</label></answer>
+			<answer value="10"><label>Ten or more</label></answer>
+		</question>
+		<question type="choice" widget="CheckboxSelectMultiple" max_answers="3"
+		          max_length="255">
+			<label>Business Reason</label>	
+			<help_text>What is your primary reason for starting a business? (Select up to three.)</help_text>
+			<answer><label>to become wealthy</label></answer>
+			<answer><label>to obtain a job</label></answer>
+			<answer><label>to be in charge</label></answer>
+			<answer><label>have become bored or frustrated with job</label></answer>
+			<answer><label>to follow an interest in a specific business area</label></answer>
+			<answer><label>job security</label></answer>
+			<answer><label>financial security</label></answer>
+			<answer><label>to work with family or friends</label></answer>
+			<answer><label>to balance work and family</label></answer>
+			<answer><label>to achieve success</label></answer>
+			<answer><label>to be in control of your own life</label></answer>
+			<answer><label>to meet a need in the market</label></answer>
+			<answer text_response="true"><label>other</label></answer>
+		</question>
+		<question type="char" widget="Textarea" max_length="255">
+			<label>Expectations</label>
+			<help_text>What are your expectations of the FastTrac program?</help_text>
+		</question>
+	</question_pool>
+	
+	<question_pool id="technology_check">
+		<question type="bool" widget="RadioSelect">
+			<help_text>Is your company a technology business, in a technology industry sector, or involved with logistics or environmental (green) industries?</help_text>
+			<answer value="true" next_question_pool="technology_questions"><label>Yes</label></answer>
+			<answer value="false" next_question_pool="special_initiatives"><label>No</label></answer>
+		</question>
+	</question_pool>
+	
+	<question_pool id="technology_questions" title="Technology Questions" next_question_pool="special_initiatives">
+		<question type="char" max_length="255">
+			<label>Industry</label>
+			<help_text>What is your primary industry?</help_text>
+		</question>
+		<question type="choice" widget="SelectMultiple">
+			<help_text>Which of the following categories best describes your business?</help_text>
+			<!--  industry choices -->
+			<answer><label>Agriculture</label></answer>
+			<answer><label>Forestry</label></answer>
+			<answer><label>Fishing and Hunting</label></answer>
+			<answer><label>Mining</label></answer>
+			<answer><label>Utilities</label></answer>
+			<answer><label>Construction</label></answer>
+			<answer><label>Manufacturing</label></answer>
+			<answer><label>Wholesale Trade</label></answer>
+			<answer><label>Retail Trade</label></answer>
+			<answer><label>Transportation and Warehousing</label></answer>
+			<answer><label>Information</label></answer>
+			<answer><label>Finance and Insurance</label></answer>
+			<answer><label>Real Estate, Rental, and Leasing</label></answer>
+			<answer><label>Professional, Scientific, and Technical Services</label></answer>
+			<answer><label>Management of Companies and Enterprises</label></answer>
+			<answer><label>Administrative and Support</label></answer>
+			<answer><label>Waste Management and Remediation Services</label></answer>
+			<answer><label>Education Services</label></answer>
+			<answer><label>Health Care and Social Assistance</label></answer>
+			<answer><label>Arts, Entertainment, and Recreation</label></answer>
+			<answer><label>Accomodation and Food Services</label></answer>
+			<answer><label>Other Services (except Public Administration)</label></answer>
+			<answer><label>Public Administration</label></answer>
+			<answer><label>Don't know</label></answer>
+		</question>
+	</question_pool>
+	
+	<question_pool id="special_initiatives">
+		<!-- employer name question redundancy -->
+		<question type="char" widget="TextInput" max_length="100">
+			<label>Employer Name</label>
+			<help_text>Who is your current or last employer?</help_text>
+		</question>
+		
+		<question type="choice" widget="CheckboxSelectMultiple" max_answers="none">
+			<label>Previous Training</label>
+			<help_text>Have you ever received any business training, mentoring, or technical assistance sponsored by the following organizations? (Check all that apply.)</help_text>
+			<answer><label>The Small Business Association (SBA)</label></answer>
+			<answer><label>Federal government agency other than the SBA</label></answer>
+			<answer><label>State or local government</label></answer>
+			<answer><label>Non-profit association for small businesses such as SCORE</label></answer>
+			<answer><label>Community college or university</label></answer>
+			<answer><label>Chamber of commerce</label></answer>
+			<answer><label>For-profit organization such as an accounting firm</label></answer>
+			<answer><label>other</label></answer>
+		</question>
+		
+		<question type="bool" widget="RadioSelect">
+			<label>ITAC Status</label>
+			<help_text>Are you an ITAC manufacturer?</help_text>
+			<answer value="true"><label>Yes</label></answer>
+			<answer value="false"><label>No</label></answer>
+		</question>
+		
+		<question type="bool" widget="RadioSelect">
+			<label>FEC Refocus Status</label>
+			<help_text>Are you a client of the Full Employment Council or Project Refocus?</help_text>
+			<answer value="true"><label>Yes</label></answer>
+			<answer value="false"><label>No</label></answer>
+		</question>
+		
+		<question type="choice" text_response="true" max_answers="none"
+                          widget="CheckboxSelectMultiple">
+			<label>How did you hear about FastTrac?</label>
+			<help_text>Check all that apply.</help_text>
+			<text_response_label>Notes:</text_response_label>
+			<answer><label>NYC gov</label></answer>
+			<answer><label>NYC Business Solutions Center</label></answer>
+			<answer><label>NYC Business Solutions Web Site</label></answer>
+			<answer><label>Press/media publication</label></answer>
+			<answer><label>Personal acquaintance</label></answer>
+			<answer><label>Other organization or agency</label></answer>
+			<answer><label>Other</label></answer>
+		</question>
+	</question_pool>
+</exam>

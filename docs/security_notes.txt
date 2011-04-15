@@ -1,0 +1,199 @@
+## Hilariously written by Randy Barlow and Andrew Ball
+#
+# Notes about security in the power_reg project.
+
+## We don't know squat about notes -- help us!
+
+In general, people with 'delete' privileges on an entire model
+can de-activate objects in that model.  We don't know
+about undeletion -- I'd suspect that a deleter could
+also undelete.
+
+We need to think about what data to return to Pete in
+regards to de-activated objects.  Probably we
+should not return them unless specifically asked for them.
+
+When Pete gets data that refers to a de-activated object,
+he should be able to follow that relationship as if it were
+still active -- to see things from the past.  It might be
+nice if Pete could indicate visually that the object has
+been de-activated.
+
+We're defining _extended attributes_ as attributes which
+refer to other models.
+
+address_manager
+- no RPC exposure
+
+blame_manager
+- no RPC exposure
+
+company_manager
+ - model-level permissions for creating, updating
+ - anyone can read all of the companies
+ - associated with
+   - users
+     - Can users create their own companies?  If not, can users
+       associate themselves with a company?
+   - training unit accounts
+     Users can't create training unit accounts or associate them with
+     companies.
+   - purchase orders
+
+ - attributes
+   name (string) - only creators and updators can modify this, anyone can read
+   active (bool) - set only by a company deleter
+
+ - ** how come companies don't have addresses, URLs, contact information,
+   etc.? **
+
+
+course_manager
+ - attributes:
+   - shortname
+   - fullname
+   - version
+   - description
+   - audience
+   - price (list price!?)
+   - lead_time
+   - duration
+ - relationships
+   outgoing
+    - product_line (foreign key, 1-1)
+   incoming
+    - course_user_role_requirement (1-1)
+    - training_voucher (many-to-many)
+    - event (1 course to many events)
+    - course_resource_type_requirement(1 course per crtr)
+
+ - model-level permissions for creating, updating, reading
+ - everybody can read all of the regular attributes
+ - what about extended attributes 
+   - training vouchers -- most people shouldn't be able to read most of these
+   - events -- people should be able to list these, but their
+     access to details is governed by the rules we establish for
+     the event manager
+   - course user role requirements
+     - readable by all
+     - writable by model-level update permission and by product line manager
+     - must be associated with a course
+   - course resource type requirement
+    - readable by all
+    - writable by model-level update permission and by product line manager
+    - must be associated with a course
+
+  ** What about modifying courses that have already been used in events?
+     Do we want to enforce a change in the courses' versions for this?
+     Should a user be able to modify a course that has an event? **
+
+course_resource_type_requirement_manager
+  ** see course_manager **
+  - associated with courses, make no sense without an associated course
+  - permissions governed by course-related permissions
+
+
+course_user_role_requirement_manager
+  ** see course_manager **
+  - associated with courses, make no sense without an associated course
+  - permissions governed by course-related permissions
+
+credential_manager
+ - "credential admin" -- model-level permissions
+ -attributes
+ 	-authority
+	-serial_number
+	-date_issued
+	-date_expires
+ -foreign attributes
+ 	-user (many to many)
+	-credential_type (many to many)
+ -Model level permissions
+ -Can anybody else create these?
+
+credential_type_manager
+
+
+
+event_manager
+
+
+event_resource_type_requirement_manager
+
+
+event_user_role_manager
+
+
+event_user_role_requirement_manager
+
+
+group_manager
+ - relationships:
+   - perm_lst (0..1 group to 1 perm_lst)
+
+import_manager
+
+note_manager
+
+
+organization_unit_manager
+
+
+payment_manager
+
+
+pr2_object_manager
+
+product_line_manager
+
+purchase_order_manager
+
+region_manager
+
+resource_manager
+
+resource_type_manager
+
+role_manager
+
+training_unit_account_manager
+
+training_unit_transaction_manager
+
+training_voucher_manager
+
+user_manager
+	-attributes
+		username
+			-should a user be able to change this?  should all users be able to read this?
+		password_hash
+			-nobody should be able to read this
+		password_hash_type
+			-nobody should be able to read this
+		title
+		last_name
+		first_name
+			-a user or someone with super privileges should be the only ones able to read or set these values?
+		phone
+		phone2
+		phone3
+		email
+		email2
+			-a user should be able to do anything with these for themselves, nobody else besides super user can
+		color code
+	-foreign attributes
+		shipping_address
+		billing_address
+			-an ordinary user should be able to read, create and modify their addresses
+			-a super user should be able to read, create, and modify all addresses
+		company
+			-should a user be able to create their company?  should they be able to modify their company?
+			-should other users be able to see which company a user is part of?
+		groups
+			-only a group super user can put a user into a group
+			-should groups have group managers that can do more stuff to the members of their groups?
+		roles
+			-only a role manager can put users into roles
+
+venue_manager
+

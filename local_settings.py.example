@@ -1,0 +1,288 @@
+# This file is loaded after the defaults have been defined in settings.py, and
+# all variables defined there are available in the local namespace.
+
+# This file was last changed in $Rev: 8607 $.
+# Compare the revision in the example file with the value in your own
+# local_settings.py, and run a command similar to the following to update your
+# own local_settings with any changes:
+#   svn diff -r MYREV:REV local_settings.py.example | patch local_settings.py
+
+##############################################################
+# general
+##############################################################
+
+import string
+import urlparse
+
+def explode(x):
+    return [_ for _ in x]
+
+SOUTH_TESTS_MIGRATE = False
+
+SKIP_SOUTH_TESTS = True
+
+# List additional apps that only need to be used for development/testing.
+INSTALLED_APPS += (
+#    'test_services',
+#    'pr_svc_tests',
+)
+
+# Full URLs to the frontend and backend -- used by email templates.
+FRONTEND_URL = 'http://local.poweru.net/'
+BACKEND_URL = urlparse.urljoin(FRONTEND_URL, 'svc/')
+
+# Debug settings. All should be "false" for production deployments
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+RPC_TRACE = True
+
+# logging settings
+# this must be an absolute path (or set it to None for stderr)
+LOGFILE_LOCATION = os.path.join(PROJECT_ROOT, 'pr-backend.log')
+# choices are the usual python log levels as a string, or 'TRACE'
+# for OMG authorizer output
+LOGLEVEL='DEBUG'
+# maximum length of RPC return value to log (in characters)
+# (None means no maximum).  If RPC_TRACE is False this will
+# have no effect.  Otherwise RPC return values will be
+# truncated accordingly.
+MAX_RPC_RETURN_LOG_LENGTH = 1000
+# Specify the type of interval, interval and backup count for automatic log
+# file rotation via the logging module (see the TimedRotatingFileHandler docs
+# for more details).  If the WHEN or INTERVAL parameters are not set or None,
+# logs will be written using a WatchedFileHandler to allow the use of third
+# party log rotation tools, such as logrotate.
+#LOGFILE_ROTATE_WHEN = 'd'
+#LOGFILE_ROTATE_INTERVAL = 1
+#LOGFILE_ROTATE_BACKUP_COUNT = 0
+
+##############################################################
+# authentication
+##############################################################
+
+# When authentication fails, wait this many seconds before returning.  A good
+# non-obnoxious value is 1.  This is meant to slow down brute-force dictionary
+# attacks
+AUTHENTICATION_FAILURE_DELAY = 1
+# number of minutes after which an auth token will expire
+AUTH_TOKEN_EXPIRATION_INTERVAL = 60
+# number of minutes after which a single use auth token expires
+AUTH_TOKEN_SINGLE_USE_EXPIRATION_INTERVAL = 4 * 60
+# number of seconds until an AuthTokenVoucher expires
+AUTH_TOKEN_VOUCHER_LIFE = 30
+
+# iterable collection of characters allowed in passwords
+PASSWORD_CHARACTER_WHITELIST = explode(string.ascii_uppercase)
+PASSWORD_CHARACTER_WHITELIST += explode(string.ascii_lowercase)
+PASSWORD_CHARACTER_WHITELIST += explode(string.digits)
+PASSWORD_CHARACTER_WHITELIST += explode(string.punctuation)
+PASSWORD_CHARACTER_WHITELIST.append(' ')
+
+# Require a user to confirm their email address before being allowed to login?
+USER_EMAIL_CONFIRMATION = True
+# Number of days the confirmation code is valid after an account is created.
+USER_CONFIRMATION_DAYS = 7
+# Create an auth token and automatically log the user in after confirmation?
+USER_CONFIRMATION_AUTO_LOGIN = True
+# Assign new users to orgs and roles based on their email domain?
+ASSIGN_ORG_ROLES_FROM_EMAIL = True
+
+################################################################
+# directory services / LDAP 
+################################################################
+
+# URL for the LDAP server to query for LDAP users
+LDAP_URL = 'ldap://orpheus.americanri.com.ofc'
+# The base search string
+LDAP_BASE = 'o=MCG'
+# Whether or not LDAP should be used for authentication
+LDAP_AUTHENTICATION = True
+# Whether or not the LDAP system should attempt to create the user upon login, if they do not already exist in the system
+LDAP_CREATE_ON_LOGIN = True
+
+# File containing the CA certificate(s) for ldap server(s).
+# This may be set to None or the empty string if no additional
+# CA specification is needed.
+LDAP_CACERT_FILE = '/etc/ssl/certs/arica.crt'
+
+# This crazy Python dict describes the LDAP schema
+LDAP_SCHEMA = { 
+    'User' : { 
+        'ldap_object_class' : 'mcgPerson',
+        'local_attributes' : { 
+            'first_name' : {'query_type' : 'simple', 'ldap_name' : 'givenName'},
+            'last_name' : {'query_type' : 'simple', 'ldap_name' : 'sn'},
+            'email' : {'query_type' : 'simple', 'ldap_name' : 'mail'},
+            'groups' : {'query_type' : 'many_to_many', 'ldap_name' : 'groupMembership', 'name_mapping' : { 
+                'cn=VOD_LIBRARY_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'library',
+                'cn=VOD_STUDENT_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'student',
+                'cn=VOD_COMMS_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'press',
+                'cn=VOD_CONED_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'continuinged',
+                'cn=VOD_PS_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'publicsafety',
+                'cn=VOD_TRAIN_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'training',
+                'cn=VOD_ISED_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'instructional',
+                'cn=VOD_ENRMGT_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'enrollment',
+                'cn=VOD_ADMIN_G,ou=LDAP,ou=SVS,'+LDAP_BASE : 'Super Administrators',
+            }},
+        },
+    }
+}
+
+##############################################################
+# local storage
+##############################################################
+
+# The User running django must have permission to write to these folders!
+# Absolute path to the directory that holds media.
+# Example: "/home/media/media.lawrence.com/"
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+# Absolute path to the directory that holds media that should be protected from world wide access
+SECURE_MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media', 'secure')
+
+## MEDIA_URL must end with a slash!
+# URL that handles the media served from MEDIA_ROOT.
+# Example: "http://media.lawrence.com"
+MEDIA_URL = urlparse.urljoin(FRONTEND_URL, 'media/')
+# URL that handles the secure media served from SECURE_MEDIA_ROOT
+SECURE_MEDIA_URL = urlparse.urljoin(FRONTEND_URL, 'media/secure/')
+
+# Address for memcached. This should always be localhost. Used for path-based authentication
+MEMCACHED_ADDRS = ['localhost:11211']
+
+##############################################################
+# database
+##############################################################
+
+# For reference: http://docs.djangoproject.com/en/1.2/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.backend',
+        'NAME': 'backend',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+    }
+}
+
+##############################################################
+# email settings for notifying sysadmins of exceptional conditions
+##############################################################
+
+# hostname and port for SMTP server to use with Django email functions
+EMAIL_HOST = 'email-blackhole.americanri.com.ofc'
+EMAIL_PORT = 25
+
+# address to use as sender for messages sent from the system
+DEFAULT_FROM_EMAIL = 'no-reply@example.poweru.com'
+
+# address to use as sender for error messages to managers and admins
+SERVER_EMAIL = 'no-reply@example.poweru.com'
+
+# This is the standard Django ADMINS setting, which gets used in the
+# e-commerce app, celery and rpc services for sending emails to sysadmins.
+ADMINS = [
+    # ('Your Name', 'your_email@domain.com'),
+    ('', 'it-support-staff@example.com'),
+]
+
+# this is the standard Django setting; used when sending messages to ADMINS
+# Add any whitespace that you want to appear between this prefix
+# and the rest of the subject line
+EMAIL_SUBJECT_PREFIX = '[PowerU] '
+
+##############################################################
+# event notification settings
+##############################################################
+
+# The time before an event starts at which the attendees should be reminded
+DEFAULT_EVENT_LEAD_TIME = 86400
+# The time after an event at which it should be marked completed and e-mails should be sent out
+DEFAULT_EVENT_LAG_TIME = 300
+
+# The amount of time before an assignment is due when the system will
+# automatically send reminder emails for assignments that are not yet completed.
+# (in seconds)
+DEFAULT_ASSIGNMENT_REMINDER_INTERVAL = 604800 # 7 days
+# The amount of time before an assignment is due when the system will
+# automatically send "pre-reminder emails" for assignments that are not yet completed.
+# (in seconds) -- set to None to disable
+DEFAULT_ASSIGNMENT_PRE_REMINDER_INTERVAL = 1296000 # 15 days
+# The amount of time to wait before sending a "nag" notice to
+# user who hasn't completed an assignment on time
+# (in seconds)
+DEFAULT_ASSIGNMENT_LATE_NOTICE_INTERVAL = 86400
+
+################################################################
+# gilmore (shipping/fulfillment)
+################################################################
+
+GILMORE_CLIENT_NAME = 'ConstantContact'
+# use port 40911 for production, and 40910 for testing
+GILMORE_URL = 'http://ariorder.ggls.us:40910'
+
+################################################################
+# Celery/RabbitMQ (message queuing)
+################################################################
+BROKER_HOST = "rusty"
+BROKER_PORT = 5672
+BROKER_USER = ""
+BROKER_PASSWORD = ""
+BROKER_VHOST = "celerytest"
+CELERY_RESULT_BACKEND = "amqp" # use amqp with RabbitMQ
+CELERY_SEND_TASK_ERROR_EMAILS = True
+
+################################################################
+# google's reCaptcha service settings
+################################################################
+RECAPTCHA_TEST_MODE = True
+RECAPTCHA_PUBLIC_KEY = 'Get me from google'
+RECAPTCHA_PRIVATE_KEY = 'Get me from google'
+
+################################################################
+# vod_aws app/plugin settings (AWS, Encoding.com)
+################################################################
+
+# Encoding.com settings
+ENCODING_USERID = '0000'
+ENCODING_USERKEY = ''
+# Optional override for the URL encoding.com uses to send us notifications;
+# set this if encoding.com needs to go through a proxy to reach the backend
+#ENCODING_NOTIFICATION_URL = 'http://vod.test.poweru.net/vod_aws/video_notification'
+
+# Amazon AWS Settings, used to generate URLs for encoding.com
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+# Our canonical user ID
+AWS_CANONICAL_USER_ID = '20596f43f5b8530b1ecb4984dd8f80e71a23a82cde471635eb0b1adbecac4b54'
+# AWS Bucket Name
+AWS_STORAGE_BUCKET_NAME = 'mybucket'
+
+# Cloudfront Origin Access ID S3 Canonical User
+AWS_CLOUDFRONT_OAI_S3_USER = ''
+
+# Cloudfront distribution hostname, ex dabcdefghijkl.cloudfront.net or a custom CNAME
+AWS_CLOUDFRONT_DIST_HOSTNAME = ''
+
+# Cloudfront streaming distribution hostname, ex sabcdefghijkl.cloudfront.net or a custom CNAME
+AWS_CLOUDFRONT_STREAMING_DIST_HOSTNAME = 'cfdist.vod.test.poweru.net'
+
+# Cloudfront Signing Key (PEM)
+AWS_CLOUDFRONT_SIGNING_KEY = '''-----BEGIN RSA PRIVATE KEY-----
+INSERTPEMKEYHERE
+-----END RSA PRIVATE KEY-----'''
+
+# Cloudfront Signing Key ID, assigned by Amazon
+AWS_COULDFRONT_SIGNING_KEY_ID = 'KEYID'
+
+# Time before expiration (in seconds) of generated URLs -- int type
+AWS_URL_LIFETIME=86400
+
+# The temporary thumbnail we return until a real one is created by transcoding
+# or uploaded via upload_video_photo; appended to MEDIA_URL.
+VOD_TEMP_THUMBNAIL='example.jpg'
+
+# Whether to queue async tasks for video upload workflow.  This should be False
+# when running unit tests.
+VOD_ENABLE_VIDEO_UPLOAD_WORKFLOW = True # defaults to True
+
+# vim:tabstop=4 shiftwidth=4 expandtab

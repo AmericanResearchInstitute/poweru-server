@@ -1,0 +1,10 @@
+M2Crypto
+    tested with version 0.20.2
+
+django-celery
+    tested with version 2.1.2
+
+django-storages
+    tested with version 1.1.1
+    had to apply this patch to get it working with our version of boto:
+        https://bitbucket.org/david/django-storages/changeset/85e72f47f638

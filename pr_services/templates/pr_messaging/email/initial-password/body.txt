@@ -1,0 +1,14 @@
+{% autoescape off %}
+{{ date }}
+
+{{ user.first_name }} {{ user.last_name }}
+{{ organization.name }}
+
+Dear {{ user.full_name }},
+
+Congratulations!  You are part of a group of users who have been bulk registered to use the new Precor Experience Training system.  Your username to get into the system is your email address and your password is {{ initial_password }}.  Once you are in the system you can change your password.  Click on Edit Profile in the upper right.
+
+Best regards,
+
+Administrator
+Precor Experience Training{% endautoescape %}

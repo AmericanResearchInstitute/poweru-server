@@ -1,0 +1,14 @@
+{% extends "base_site.html" %}
+{% load i18n %}
+
+{% block title %}{% if title %}{{ title }}{% else %}{% trans 'Page not found' %}{% endif %}{% endblock %}
+
+{% block content_title %}<h1>{% if title %}{{ title }}{% else %}{% trans 'Page not found' %}{% endif %}</h1>{% endblock %}
+
+{% block content %}
+{% if msg %}
+<p>{{ msg }}</p>
+{% else %}
+<p>{% trans "We're sorry, but the requested page could not be found." %}</p>
+{% endif %}
+{% endblock %}

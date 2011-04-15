@@ -1,0 +1,53 @@
+# This is an example wsgi script for launching a django app. Configure the 
+# project_path inside the application method, and name your settings module
+# 'settings' (the default).
+
+import os, sys
+from django.core.handlers.wsgi import WSGIHandler
+
+def application(environ, start_response):
+    '''Prepares and returns a django wsgi application.
+
+    This will populate the 'environ['PATH_INFO'] variable, which is local to 
+    django itself, with path info that django needs to properly service 
+    requests. Furthermore, the django project path will be prepended to 
+    the system path, essentially giving the apps in the django project
+    the ability to override/implement modules in its local scope.
+    Additionally, the project's settings module name will be put into the
+    python runtime environment for django to use.'''
+
+    # For a Django project only, please. Declare the path of your django
+    # project.
+    # This will be the same directory as manage.py, urls.py, etc...
+    project_path = '/path/to/django/project'
+
+    if os.path.isdir(project_path):
+
+        # strip trailing slashes
+        project_path = project_path.rstrip('/')
+
+        # prepend the application path to a new sys.path list
+        newpath = [ project_path ] + sys.path
+
+        # replace sys.path with the 'newpath' list
+        sys.path = newpath 
+
+        # prepend the script path to django's PATH_INFO
+        environ['PATH_INFO'] = environ['SCRIPT_NAME'] + environ['PATH_INFO']
+        
+        # tell django the name of the settings module (usually 'settings')
+        os.environ['DJANGO_SETTINGS_MODULE'] = 'settings' 
+
+        return WSGIHandler()(environ, start_response)
+
+    else:
+        raise IOError, 'Path not found: "%s"' % project_path
+
+# Uncomment the following two lines to print unhandled exceptions to the
+# browser, instead of an HTTP 500 error page. Python "Paste" need to be
+# installed for this.
+
+from paste.exceptions.errormiddleware import ErrorMiddleware
+application = ErrorMiddleware(application, debug=True)
+
+# vim:tabstop=4 shiftwidth=4 expandtab syn=python

@@ -1,0 +1,4 @@
+Sphinx docs should build on systems with the python 'sphinx' package installed
+
+There is a Makefile included with Sphinx to help automate bulding docs, but
+'make' needs to be installed, of course.

@@ -1,0 +1,17 @@
+## Settings required to connect to Virtual Merchant's gateway.
+class vm_settings(object):
+    __slots__ = [
+        'vm_url',
+        'merchant_id',
+        'user_id',
+        'pin',
+        'debug',
+    ]
+
+    vm_url = 'https://demo.myvirtualmerchant.com/VirtualMerchantDemo/processxml.do'
+    merchant_id = '000065'
+    user_id = '000065'
+    pin = 'E0GNVM'
+    debug = True
+
+# vim:tabstop=4 shiftwidth=4 expandtab

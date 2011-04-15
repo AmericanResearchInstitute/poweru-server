@@ -1,0 +1,6 @@
+CREATE TABLE "raw_response" (
+    "id" serial NOT NULL PRIMARY KEY,
+    "text" text NOT NULL,
+    "time" timestamp with time zone NOT NULL
+)
+;

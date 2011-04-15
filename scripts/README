@@ -1,0 +1,14 @@
+Most of what has been in this directory historically have been scripts that are
+run by cron.  With the addition of celery into our product cron is mostly, if
+not completely obsolete.  So this directory will start to shrink over time.
+
+Coincidentally, the scripts to manager a celeryd process can also be found
+here.  There is currently no celery package for Debian and there appears to be
+no plan to include it.  Since we're moving towards using PIP and
+python-virtualenv for our deployments, celery will be installed into those
+virtual envionrments with PIP.  The celery init scripts can then be placed in
+/etc/init.d/ and configured with /etc/default/celeryd, etc.
+
+We have future plans to make our own Debian package with a customized version
+of these init scripts to support multiple celery daemons per host with
+disparate task bases (e.g. different web sites).

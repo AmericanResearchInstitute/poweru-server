@@ -1,0 +1,3 @@
+django
+django.contrib.contenttypes must be in 'INSTALLED_APPS'
+celery

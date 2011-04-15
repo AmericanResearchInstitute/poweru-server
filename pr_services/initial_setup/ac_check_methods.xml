@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<methods>
+    <method name = "actor_actee_enrolled_in_same_session" title = "Actor and actee are enrolled in the same session" description =
+            "Returns True if the actor and the actee are both enrolled in the same session, for which actor is in the session_user_role actor_eur, and actee is in the session_user_role actee_eur.  Returns False otherwise.  This method is only for use when the actee is a user.">
+    </method>
+    <method name = "actor_is_acting_upon_themselves" title = "Actor is acting upon themselves" description =
+            "Returns True if the actor is an authenticated user who is acting upon themselves.  Only affects permissions for the user object">
+    </method>
+    <method name = "actor_is_authenticated" title = "Actor is authenticated" description =
+            "Returns True if the actor is an authenticated user"></method>
+    <method name = "assignment_prerequisites_met" title = "Assignment prerequisites have been met" description =
+            "Returns True iff the Assignment's prerequisites have been met"></method>
+    <method name = "assignment_attempt_meets_date_restrictions" title = "AssignmentAttempt meets date restrictions" description =
+            "Returns True iff the AssignmentAttempt's start date is after the Assignment's effective_date_assigned"></method>
+    <method name = "assignment_attempt_prerequisites_met" title = "AssignmentAttempt prerequisites have been met" description =
+            "Returns True iff the AssignmentAttempt's prerequisites have been met"></method>
+    <method name = "actor_is_group_manager" title = "Actor is the manager of the group in question" description =
+            "Returns True if the actor is the manager of the group they are acting upon"></method>
+    <method name = "actor_is_in_actee_which_is_a_group" title = "Actor is a user in the group in question" description =
+            "Returns True if the actor is a member of the group they are acting upon"></method>
+    <method name = "actor_is_guest" title = "Actor is a guest" description =
+            "Returns True if the actor is a guest, which means they have not authenticated or logged in"></method>
+    <method name = "actor_is_instructor_manager_of_actee" title = "Actor is the instructor manager of the actee" description =
+            "Returns True if the actor is an instructor manager for a product line for which the actee is listed as an instructor"></method>
+    <method name = "actor_member_of_group" title = "Actor is Member of Group" description =
+            "Returns true if the actor is a member of the specified group. Specify a group by passing its ID as 'group_id'"></method>
+    <method name = "actor_owns_address" title = "Actor owns the address" description = 
+            "Returns True if the actor owns the address in question.  Only affects permissions on the address object"></method>
+    <method name = "actor_is_product_line_manager_of_product_line" title = "Actor is product line manager for a given product line" description = 
+            "Returns True if the actor is the product line manager for the product line being accessed."></method>
+    <method name = "actor_is_product_line_manager_of_session" title = "Actor is product line manager for the session_template being accessed" description = 
+            "Returns True if the actor is the product line manager for the product line of the session being accessed."></method>
+    <method name = "actor_is_product_line_manager_of_session_template" title = "Actor is product line manager for the session being accessed" description = 
+            "Returns True if the actor is the product line manager for the product line of the session_template being accessed."></method>
+    <method name = "actor_is_product_line_manager_of_user" title = "Actor is product line manager for the user being accessed" description = 
+            "Returns True if the actor is the product line manager for the product line of the user being accessed."></method>
+    <method name = "actor_owns_purchase_order" title = "Actor is the owner of the purchase order being accessed" description = 
+            "Returns True if the actor owns the purchase order being accessed."></method>
+    <method name = "purchase_order_has_payments" title = "Purchase Order being accessed has payments" description = 
+            "Returns True if the purchase order being accessed has at least one payment."></method>
+    <method name = "purchase_order_has_no_payments" title = "Purchase Order being accessed has no payments" description = 
+            "Returns True if the purchase order being accessed has no payments."></method>
+    <method name = "actor_owns_training_unit_authorization" title = "Actor owns the training_unit_authorization being accessed" description = 
+            "Returns True if the actor owns the training_unit_authorization being accessed."></method>
+    <method name = "actor_owns_payment" title = "Actor owns the given payment" description = 
+            "Returns True if the actor owns the purchase order against which the currently accessed payment was made,"></method>
+    <method name = "refund_does_not_exceed_payment" title = "Refund does not exceed payment" description = 
+            "Returns true if the refund does not put the total amount of refunds for a particular payment over the value of the payment"></method>
+    <method name = "assignment_venue_matches_actor_preferred_venue" title = "Assignment venue matches actor venue" description = 
+            "Returns true if the assignment is for a session at a venue that matches the actor's preferred venue"></method>
+    <method name = "actor_status_check" title = "Actor is of specified status" description = "Returns true if the actor is of the specified status.">
+    </method>
+    <method name = "actor_is_anybody" title = "Actor is any user" description = "Always returns True."></method>
+    <method name = "actor_is_adding_allowed_many_ended_objects_to_user" title = "Actor is adding allowed many ended objects to user" description = "This is a strange new breed of auth_check that concerns itself with the update_dict.  It ensures that the update_dict is only attempting to add items from the list of allowed primary keys to the attribute on the actee.  It will return false if any 'remove' operation is in the dict, or if any primary key appears in the add list that is not in the allowed primary key list."></method>
+    <method name = "actor_owns_event" title = "Actor owns the event" description = "Returns True if the actor owns the event."></method>
+    <method name = "actor_owns_session" title = "Actor owns the session" description = "Returns True if the actor owns the session."></method>
+    <method name = "actor_owns_session_user_role_requirement" title = "Actor owns the session_user_role_requirement" description = "Returns True if the actor owns the session_user_role_requirement."></method>
+    <method name = "populated_exam_session_is_finished" title = "Populated exam_session is finished." description = "Does nothing if the exam_session has no answered questions or ratings.  Returns True if exam_session is finished, else False."></method>
+    <method name = "actor_is_venue_creator" title = "The actor is the venue's creator" description = "Returns True if the actor is the user who created the venue, which is discovered by examining the venue's blame"></method>
+    <method name = "surr_is_of_a_particular_sur" title = "session_user_role_requirement is of a particular session_user_role" description = "Returns True iff the session_user_role associate with the actee is the same as the session_user_role specified by the parameter session_user_role."></method>
+    <method name = "actor_owns_credential" title = "Actor owns Credential" description = "Returns True iff the actor is the owner of the credential"></method>
+    <method name = "actor_has_completed_task_prerequisites" title = "Actor has completed Task prerequisites" description = "Returns True iff the actor has completed all of the prerequisite tasks for the task being queried."></method>
+    <method name = "actor_owns_assignment" title = "Actor owns Assignment" description = "Returns True iff the actor is the owner of the assignment"></method>
+    <method name = "actor_owns_assignment_attempt" title = "Actor owns AssignmentAttempt" description = "Returns True iff the actor is the owner of the assignment attempt"></method>
+    <method name = "actor_has_completed_assignment_prerequisites" title = "Actor has completed Assignment prerequisites" description = "Returns True iff the actor has completed all of the prerequisite Tasks for the Assignment being queried."></method>
+    <method name = "actor_owns_question_response" title = "Actor owns QuestionResponse" description = "Returns True iff the QuestionResponse is for an ExamSession owned by the actor."></method>
+    <method name = "actees_attribute_is_set_to" title = "Actee's attribute is set to" description = "This complicatedly name method exists to be a bit genericly useful.  It will examine actee, ensuring that it is of type actee_model_name.  It will then ensure that attribute_name's value is equal to attribute_value."></method>
+    <method name = "actees_foreign_key_object_has_attribute_set_to" title = "Actee's foreign key object has attribute set to" description = "This complicatedly name method exists to be a bit genericly useful.  It will examine actee, ensuring that it is of type actee_model_name.  It will then follow a foreign key relationship, actee.foreign_object_attribute_name, and ensure that that attribute's value is equal to foreign_object_attribute_value."></method>
+    <method name = "actor_owns_assignment_or_is_guest" title = "Actor owns assignment or is guest" description = "Returns True if the actor is the owner of the Assignment, or if the actor is a guest and the Assignment doesn't have a user defined."></method>
+    <method name = "actor_owns_prmodel" title = "Actor owns PRModel" description = "Returns True if the actor is the same User object as is listed in the OwnedPRModel's owner field."></method>
+    <method name = "actee_is_in_group_and_domain" title = "Actee is in group and domain" description = "If the actee is in the group, the method returns True iff they are also of the domain.  If they are not in the group, it will return True.  This is useful for making sure that participants who register themselves are in the constantcontact.com domain."></method>
+    <method name = "actor_related_to_domain_affiliation" title = "DomainAffiliation user is actor" description = "Returns True if DomainAffiliation.user is the actor."></method>
+    <method name="actor_is_in_actee_which_is_an_organization" title="Actor is in actee organization" description="Returns True if the actee is an Organization and the actor belongs to that organization" />
+    <method name="assignment_is_not_video" title="Assignment is not to watch Video" description="Returns True iff the actee is an Assignment the Task in which is not a Video" />
+    <method name="actor_is_manager_of_actee_related_category" title="Actor is Category Manager of category related to actee" description="Returns True iff the actor is a manager of a category that the actee is directly or indirectly related to, and the relationship is not through a deleted video" />
+    <method name="actor_is_member_of_actee_related_category_authorized_groups" title="Actor is a member of an actee-related Category's authorized groups" description="Returns true iff the actor is a member of an authorized group on a category that's in an approved relationship to the actee" />
+    <method name="actor_is_member_of_any_organization" title="Actor is member of any Organization" description="Returns true iff the actor is a member of any Organization" />
+</methods>
